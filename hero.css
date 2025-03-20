@@ -1,0 +1,97 @@
+@import 'navbar.css';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Left Side - Text */
+.text-content {
+    max-width: 50%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.highlight {
+    color: #e4b38f;
+    font-weight: bold;
+}
+
+.description {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.command {
+    margin-top: 20px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    display: inline-block;
+}
+
+/* Marquee Logo Organisasi */
+.mquee{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+    width: 100%; 
+    overflow: hidden;
+}
+
+.mquee p{
+    max-width: 50%;
+    text-align: left;
+}
+
+.marquee{
+    width: 85%;
+    height: 100px;
+    min-width: 800; /* Biar that it doesnt go too small */
+    max-width: 1200px; /* Prevent it from stretching too much */
+    overflow: hidden;
+}
+
+.marqueecontent {
+    width: 200%;
+    height: 100%;
+    background: url('images/Marquee.png') repeat-x;
+    background-size: contain;
+    animation: scrollMarquee 12s linear infinite;
+}
+
+@keyframes scrollMarquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%); 
+    }
+}
+
+/* Right Side - Image */
+.image-content {
+    position: relative;
+    max-width: 60%;
+    min-width: 30%;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

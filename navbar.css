@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #242424;
+    color: white;
+    padding-top:10px;
+    padding-left:90px;
+padding-right:90px;
+
+}
+
+
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px ;
+    background-color: #353535;
+    font-size: 35px;
+    min-width: 100%;
+}
+
+.navbar a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 25px;
+    justify-content:flex-end;
+    margin-right: 15px;
+}
+
+.logo span{
+    color:white;
+    animation: colorShift 3.2s steps(2) infinite;
+    font-weight:bold;
+}
+.dot{
+margin-left:0px;
+color:#FFFFFF;
+position:relative;
+}
+
+.dot::after{
+content:'';
+border-left:2px solid #ffffff;
+position:absolute;
+height:100%;
+display: inline-block;
+background-color: #353535;
+left:0px; 
+width:100%;
+animation: typing 3s steps(3) infinite;
+}
+
+
+@keyframes typing {
+40%,
+60%{left:calc(100% + 10px);}
+100% {left:0;}
+}
+
+.logo span:nth-child(1) { animation-delay: 0s; }
+.logo span:nth-child(2) { animation-delay: 0.4s; }
+.logo span:nth-child(3) { animation-delay: 0.8s; }
+.logo span:nth-child(4) { animation-delay: 1.2s; }
+.logo span:nth-child(5) { animation-delay: 1.6s; }
+.logo span:nth-child(6) { animation-delay: 2s; }
+.logo span:nth-child(7) { animation-delay: 2.4s; }
+.logo span:nth-child(8) { animation-delay: 2.8s; }
+.logo span:nth-child(9) { animation-delay: 3.2s; }
+@keyframes colorShift{ 0%{color:white}100%{color:#FFCB9E;}
+}
+
+.logo{margin-left:0px;
+padding-left:0px;
+}  
+
+
+.navbar a:hover {
+    color: #ffcc99;
+}
