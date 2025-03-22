@@ -10,7 +10,7 @@ body {
     color: white;
     padding-top:10px;
     padding-left:90px;
-padding-right:90px;
+    padding-right:90px;
 
 }
 * {
@@ -24,6 +24,7 @@ padding-right:90px;
     align-items: center;
     justify-content: space-between;
     padding: 50px;
+    padding-bottom: 20px;
     max-width: 1200px;
     margin: auto;
 }
@@ -78,18 +79,31 @@ h1 {
 .marquee{
     width: 80%;
     height: 100px;
+    margin-top:15px;
     min-width: 800; /* Biar that it doesnt go too small */
     max-width: 1200px; /* Prevent it from stretching too much */
     overflow: hidden;
 }
 
 .marqueecontent {
-    width: 200%;
-    height: 100%;
-    background: url('images/Marquee.png') repeat-x;
-    background-size: contain;
+    display: inline-flex;
     animation: scrollMarquee 12s linear infinite;
 }
+
+.marqueecontent img {
+    height: 60px; /* Adjust as needed */
+    margin-right: 30px;
+}
+
+/* .marqueecontent {
+    width: 200%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: url('https://i.imgur.com/bRQxbIP.png') repeat-x;
+    background-size: contain;
+    animation: scrollMarquee 16s linear infinite;
+} */
 
 @keyframes scrollMarquee {
     from {
@@ -122,4 +136,12 @@ h1 {
     padding-right: 50px;
     max-width: 1200px;
     margin: auto;
+}
+
+.custom-timer-bar{
+    background-color: #aafaa3
+}
+.conf-button{
+    border-radius: 5px;
+    background-color: #b5df717e;
 }
