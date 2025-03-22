@@ -1,4 +1,18 @@
 @import 'navbar.css';
+@import 'achievement.css';
+@import 'bganim.css';
+
+
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #242424;
+    color: white;
+    padding-top:10px;
+    padding-left:90px;
+padding-right:90px;
+
+}
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +50,7 @@ h1 {
 
 .command {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 1.2rem;
     background: rgba(255, 255, 255, 0.1);
     padding: 8px;
     display: inline-block;
@@ -48,18 +62,21 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:30px;
     width: 100%; 
     overflow: hidden;
 }
 
-.mquee p{
-    max-width: 50%;
-    text-align: left;
+.command-mquee {
+    margin-top: 150px;
 }
 
+/* .mquee p{
+    max-width: 50%;
+    text-align: left;
+} */
+
 .marquee{
-    width: 85%;
+    width: 80%;
     height: 100px;
     min-width: 800; /* Biar that it doesnt go too small */
     max-width: 1200px; /* Prevent it from stretching too much */
@@ -83,6 +100,7 @@ h1 {
     }
 }
 
+
 /* Right Side - Image */
 .image-content {
     position: relative;
@@ -94,4 +112,14 @@ h1 {
     width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+.skillset{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 1200px;
+    margin: auto;
 }

@@ -1,0 +1,129 @@
+/* Achievements Section */
+.achievements-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 29px;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: center;
+
+}
+
+/* Card Styles */
+.achievement-card {
+    background: #353535;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+    width: 300px;
+    height: 310px;
+}
+
+.achievement-card:nth-child(2) {
+    height: 290px;
+}
+
+.achievement-card:nth-child(4) {
+    margin-top: 20px;
+    height: 310px;
+}
+
+.achievement-card:nth-child(5) {
+    margin-top: 10px;
+    height: 305px;
+}
+
+.achievement-card:last-child {
+    height: 310px; 
+    margin-top: 15px;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+
+}
+
+.achievement-card:hover .ai {
+    opacity: 0;
+}
+
+.achievement-card .aih {
+    opacity: 0;
+}
+
+.achievement-card:hover .aih {
+    opacity: 1;
+}
+
+
+.achievement-card img,video{
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin:10px;
+    margin-top:15px;
+    display: flex;
+}
+
+
+/* Card Content */
+.achievement-info {
+    padding: 15px;
+    text-align: center;
+    position: absolute;
+    bottom: 0; /* Stick text at the bottom */
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    
+}
+
+.achievement-info h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.achievement-info .subtitle {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #838383;
+}
+
+/* Info Button */
+.info-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: white;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.info-btn:hover {
+    background: #f4a261;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
