@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
+    <title>ZURUFIKAR.DEV</title>
+    <link rel="icon" href="images\fav.ico" type="image/x-icon">
     <link rel="stylesheet" href="hero.css">
-
     </head>
 <body>
     <div class="floating-container"></div>
@@ -13,8 +13,7 @@
         <wrapper>
           <span class="no">../</span>   
           <span class="logo">
-            <span>Z</span><span>U</span><span>R</span><span>U</span><span>F</span><span>I</span><span>K</span><span>A</span><span>R</span>
-            </span>
+            <span>Z</span><span>U</span><span>R</span><span>U</span><span>F</span><span>I</span><span>K</span><span>A</span><span>R</span></span>
           <span class="no">></span> 
           <span class="dot">...</span>      </wrapper>
         <wrapper class="nav-right">
@@ -26,7 +25,8 @@
     </nav>
     <section class="hero-section">
         <div class="text-content">
-            <p class="command" style="margin-bottom: 20px;">> executing ../ZURUFIKAR/me</p>
+            <p class="command hidden" style="margin-bottom: 20px;"><span class="typing">> executing ../ZURUFIKAR/me</span>
+            </p></p>
             <h1>Hey there, <br> I'm <span class="highlight">Zur!</span></h1>
             <p class="description">
                 I’m an <strong>IT enthusiast</strong> currently interested in 
@@ -46,7 +46,7 @@
                 <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
 
-            <p class="command-mquee command">> ‘ZURUFIKAR’ is PART of...</p>
+            <p class="command command-mquee hidden" style="margin-bottom: 20px;"><span class="typing">> ‘ZURUFIKAR’ is PART of...</span></p>
         </div>
 
         <div class="image-content">
@@ -83,13 +83,39 @@
     </section>
 
     <section class="skillset">
-        <div>
-        <p class="command">> SELECT 'skills' FROM ‘ZURUFIKAR’ </p>
-
-        <!-- achievement cmd -->
-        <p class="command">> SELECT 'achievements' FROM ‘ZURUFIKAR’ </p>
-    </div>
+        <p class="command hidden" style="margin-bottom: 20px;"><span class="typing">> SELECT 'skills' FROM ‘ZURUFIKAR’</span></p>
     </section>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <p>> Found <span id="result-count">0</span> results related to ‘skills’ from ‘<span id="username">ZURUFIKAR</span>’</p>
+        </div>
+        
+
+        <!-- Hard Skills Section -->
+        <div class="section">
+            <p class="title hard">Results in ‘HARD’</p>
+            <div id="hard-skills" class="skills-container tags"></div>
+        </div>
+
+        <!-- Soft Skills Section -->
+        <div class="section">
+            <p class="title soft">Results in ‘SOFT’</p>
+            <div id="soft-skills" class="skills-container tags"></div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <p>> 
+                <span class="very-familiar">■ Very Familiar</span> 
+                <span class="familiar">■ Familiar</span> 
+                <span class="somewhat">■ Somewhat Familiar</span> 
+                <span class="learning">■ Is Learning</span> 
+            </p>
+        </div>
+    </div>
+
+
 
     <!-- Achievements -->
     </section>

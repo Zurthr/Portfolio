@@ -1,7 +1,7 @@
 @import 'navbar.css';
 @import 'achievement.css';
-@import 'bganim.css';
-
+@import 'anim.css';
+@import 'skills.css';
 
 body {
     margin: 0;

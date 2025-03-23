@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    
+
     // Show WIP Alert with Swal
     if (typeof Swal !== "undefined") {
         Swal.fire({
@@ -65,3 +67,72 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+const skills = {
+    hard: [
+        { name: "HTML & CSS", level: "learning" },
+        { name: "PYTHON", level: "familiar" },
+        { name: "C#", level: "somewhat" },
+        { name: "GODOT", level: "familiar" },
+        { name: "GODOT", level: "familiar" }
+    ],
+    soft: [
+        { name: "CSS", level: "familiar" },{ name: "WORK IN PROGRESS!!", level: "familiar" }
+    ]
+};
+
+function renderSkills() {
+    const hardContainer = document.getElementById("hard-skills");
+    const softContainer = document.getElementById("soft-skills");
+
+    if (!hardContainer || !softContainer) {
+        console.error("Error: One or both skill containers are missing.");
+        return;
+    }
+
+    // Clear previous content
+    hardContainer.innerHTML = "";
+    softContainer.innerHTML = "";
+
+    // Hard Skills
+    skills.hard.forEach(skill => {
+        const tag = document.createElement("span");
+        tag.classList.add("tag", skill.level);
+        tag.innerText = skill.name;
+        hardContainer.appendChild(tag);
+    });
+
+    // Soft Skills
+    skills.soft.forEach(skill => {
+        const tag = document.createElement("span");
+        tag.classList.add("tag", skill.level);
+        tag.innerText = skill.name;
+        softContainer.appendChild(tag);
+    });
+
+    // Update result count dynamically
+    document.getElementById("result-count").innerText = skills.hard.length + skills.soft.length;
+}
+
+const observe = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+
+            // Restart typing animation
+            let typingElement = entry.target.querySelector('.typing');
+            if (typingElement) {
+                typingElement.style.animation = 'none'; // Reset animation
+                void typingElement.offsetWidth; // Force reflow to restart animation
+                typingElement.style.animation = 'typing 2s steps(20, end) forwards, blink 0.6s infinite';
+            }
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observe.observe(el));
+
+document.addEventListener("DOMContentLoaded", renderSkills);
