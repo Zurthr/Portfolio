@@ -2,7 +2,7 @@
 @import 'achievement.css';
 @import 'anim.css';
 @import 'skills.css';
-
+@import 'projects.css';
 body {
     margin: 0;
     font-family: 'Courier New', monospace;

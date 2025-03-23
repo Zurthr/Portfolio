@@ -96,23 +96,25 @@ function renderSkills() {
 
     // Hard Skills
     skills.hard.forEach(skill => {
-        const tag = document.createElement("span");
-        tag.classList.add("tag", skill.level);
-        tag.innerText = skill.name;
-        hardContainer.appendChild(tag);
+        const skilltag = document.createElement("span");
+        skilltag.classList.add("skilltag", skill.level);
+        skilltag.innerText = skill.name;
+        hardContainer.appendChild(skilltag);
     });
 
     // Soft Skills
     skills.soft.forEach(skill => {
-        const tag = document.createElement("span");
-        tag.classList.add("tag", skill.level);
-        tag.innerText = skill.name;
-        softContainer.appendChild(tag);
+        const skilltag = document.createElement("span");
+        skilltag.classList.add("skilltag", skill.level);
+        skilltag.innerText = skill.name;
+        softContainer.appendChild(skilltag);
     });
 
     // Update result count dynamically
     document.getElementById("result-count").innerText = skills.hard.length + skills.soft.length;
 }
+document.addEventListener("DOMContentLoaded", renderSkills);
+
 
 const observe = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -135,4 +137,80 @@ const observe = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observe.observe(el));
 
-document.addEventListener("DOMContentLoaded", renderSkills);
+
+const projects = [
+    {
+        title: "IISMA SHEET",
+        description: "My personal portfolio built with HTML, CSS, and JavaScript.",
+        tags: ["Web Dev", "Portfolio"],
+        resources: ["HTML", "CSS", "JS"],
+        img: "images/portfolio.png",
+        icon: "images/m2.png",
+        date: "2024 - Present"
+    },
+    {
+        title: "Platformer Game",
+        description: "A 2D platformer built in Godot.",
+        tags: ["Game Dev"],
+        resources: ["Godot", "C#"],
+        img: "images/game.png",
+        icon: "icons/game-icon.png",
+        date: "2023 - 2024"
+    },
+    {
+        title: "AI Chatbot",
+        description: "An AI chatbot using NLP techniques.",
+        tags: ["AI", "Machine Learning"],
+        resources: ["Python", "TensorFlow"],
+        img: "images/chatbot.png",
+        icon: "icons/chatbot-icon.png",
+        date: "2024"
+    }
+];
+
+const projectList = document.getElementById("project-list");
+const projectDetails = document.getElementById("project-details");
+
+// Load project list in sidebar with images
+projects.forEach((proj, index) => {
+    const li = document.createElement("li");
+    li.classList.add("project-item");
+    li.setAttribute("data-index", index);
+
+    const img = document.createElement("img");
+    img.src = proj.icon;
+    img.alt = proj.title + " Icon";
+    img.classList.add("project-icon");
+
+    const span = document.createElement("span");
+    span.textContent = proj.title;
+
+    li.appendChild(img);
+    li.appendChild(span);
+
+    li.addEventListener("click", () => displayProject(index));
+
+    projectList.appendChild(li);
+});
+
+// Function to update project details
+function displayProject(index) {
+    const proj = projects[index];
+
+    projectDetails.innerHTML = `
+        <h2>${proj.title}</h2>
+        <img src="${proj.img}" alt="${proj.title}">
+        <p>${proj.description}</p>
+        <div class="tags">
+            ${proj.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        </div>
+        <div class="resources">
+            ${proj.resources.map(res => `<span class="resource">${res}</span>`).join('')}
+        </div>
+        <p class="date">${proj.date}</p>
+    `;
+
+    // Remove active class from all and add to selected
+    document.querySelectorAll(".project-item").forEach(item => item.classList.remove("active"));
+    document.querySelector(`[data-index="${index}"]`).classList.add("active");
+}
