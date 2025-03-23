@@ -40,11 +40,11 @@ display: inline-block;
 background-color: #353535;
 left:0px; 
 width:100%;
-animation: typing 3s steps(3) infinite;
+animation: types 3s steps(3) infinite;
 }
 
 
-@keyframes typing {
+@keyframes types {
 40%,
 60%{left:calc(100% + 10px);}
 100% {left:0;}
