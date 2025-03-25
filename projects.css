@@ -1,17 +1,38 @@
-.projects{
-    padding:50px;
-    
-}
-
-.projects .command{
-    margin-bottom:30px;
-}
-.projects-layout {
-    display: flex;
-    gap: 20px;
+/* Projects section */
+.projects {
+    padding-left: 50px;
+    padding-right: 50px;
     padding-bottom: 20px;
     max-width: 1200px;
     margin: auto;
+}
+
+.project-img-head{
+    justify-self: center;
+    max-width: 100%;
+}
+
+.img.proj{
+    display: flex;
+    max-width: 1400px;
+    padding-left: 40px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+.projects .command {
+    margin-bottom: 30px;
+}
+
+.projects-layout {
+    display: flex;
+    gap: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+    padding-left: 5px;
+    background-color: #353535;
 }
 
 /* Sidebar */
@@ -20,48 +41,65 @@
     padding: 15px;
     background: #353535;
     color: #fff;
-    height:450px;
+    height: 450px;
     border-radius: 10px;
-    overflow-y: auto; /* Enables scrolling when content exceeds height */
-    scrollbar-width: thin; /* Makes the scrollbar thinner */
-    scrollbar-color: #888 #333; /* Custom scrollbar color */
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: thin;
 }
 
-.sidebar h3 {
+.sidebar .project-title {
+    background: #242424;
+    border-radius: 5px;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 32px;
     margin-bottom: 15px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-shrink: 0;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+    margin: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #353535 #353535;
 }
 
 .project-item {
+    margin-left: 10px;
     display: flex;
-    align-items: center; 
-    gap: 5px; 
+    align-items: center;
+    gap: 5px;
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
     transition: 0.3s;
-    height: 40px;
+    height: 50px;
     background: #4B4B4B;
     margin-bottom: 10px;
+    border-left: 6px solid #220101;
 }
-
 
 .project-item span {
-    line-height: 1; 
-    font-size: 16px; 
+    line-height: 1;
+    font-size: 16px;
     display: flex;
-    align-items: center; }
-
-.project-icon {
-    width: 20px;  
-    height: 20px;
-    border-radius: 3px; 
+    align-items: center;
 }
 
+.project-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
 
 .project-item:hover,
 .project-item.active {
@@ -73,7 +111,7 @@
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background: #ffe6a8; 
+    background: #ffe6a8;
     border-radius: 4px;
 }
 
@@ -83,33 +121,154 @@
 
 /* Project Details */
 .projects-container {
-    flex-grow: 1;
-    background: #222;
+    background: #242424;
     padding: 20px;
+    margin-top: 10px;
+    max-width: 100%;
+    flex-grow: 1;
+    min-width: 575px;
     border-radius: 10px;
     color: white;
+    height: 450px;
+    display: flex;
+    min-width: fit-content;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .projects-container img {
     width: 100%;
-    max-height: 300px;
+    max-width: 100%;
+    height: auto;
+    max-height: 260px;
+    overflow: hidden;
     border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    justify-self: center;
+}
+
+
+
+/* Project header area */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #444; /* Add this line */
+
+}
+
+.project-header h2 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.desc-right {
+    text-align: right;
+    max-width: 40%;
+}
+
+.desc-left{
+    text-align: left;
+    width: 60%;
+    max-height: 80%;
+    flex-shrink: 1; /* Allows it to shrink if necessary */
+    white-space: normal; /* Allows text wrapping */
+    word-break: break-word; /* Ensures long words don’t stretch the container */
+}
+.resources {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
     margin-bottom: 10px;
 }
 
-.tags, .resources {
-    margin-top: 10px;
-}
-
-.tag, .resource {
+.resource {
     display: inline-block;
     background: #444;
     padding: 5px 10px;
-    margin: 3px;
+    margin: 0;
     border-radius: 5px;
+    font-size: 14px;
+}
+.text-desc{
+    overflow-y: auto; /* Enables scrolling */
+    max-height: 70px;
+    scrollbar-width: thin;
+    scrollbar-color: #242424 #242424;
+    direction: rtl; /* This flips the scrolling direction */
+    unicode-bidi: plaintext; /* Ensures text still reads left to right */
+}
+.project-description {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    overflow: hidden;
+    max-height:100px;
+    flex-wrap: nowrap; 
+}
+
+/* Tags and date */
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Push to bottom */
+}
+
+.tags {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.tag {
+    display: inline-block;
+    background: #444;
+    padding: 5px 12px;
+    margin: 0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Special tag colors */
+.tag.full-stack {
+    background: #d66a6a;
+}
+
+.tag.game-design {
+    background: #b86bbe;
 }
 
 .date {
-    margin-top: 10px;
     color: #ccc;
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
 }
+
+
+.achievements-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 29px;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: center;
+
+}
+
+
+
+/* ML - Front End - Full Stack - Game Dev - Non IT - Web Dev -  */
+/* Project category colors */
+.project-item.game { border-left-color: #FFD700; } /* Game Dev */
+.project-item.ai { border-left-color: #FF5722; } /* AI Projects */
+.project-item.web { border-left-color: #4CAF50; } /* Web Projects */

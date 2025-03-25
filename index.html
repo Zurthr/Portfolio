@@ -94,38 +94,36 @@
 
         <!-- Hard Skills Section -->
         <div class="section">
-            <p class="title hard">Results in ‘HARD’</p>
+            <p class="title hard">WHERE type IN ('Programming Languages', 'Other IT Tools')</p>
             <div id="hard-skills" class="skills-container tags"></div>
         </div>
 
         <!-- Soft Skills Section -->
         <div class="section">
-            <p class="title soft">Results in ‘SOFT’</p>
+            <p class="title soft">WHERE type='General'</p>
             <div id="soft-skills" class="skills-container tags"></div>
         </div>
 
         <!-- Legend -->
         <div class="legend">
-            <p>> 
-                <span class="very-familiar">■ Very Familiar</span> 
+            <p>!
+                <span class="very">■ Very Familiar</span> 
                 <span class="familiar">■ Familiar</span> 
                 <span class="somewhat">■ Somewhat Familiar</span> 
                 <span class="learning">■ Is Learning</span> 
+                <span class="general">■ General</span> 
             </p>
         </div>
     </div>
 
-
-
-
-
+    <div class="img proj">
+    <img class="project-img-head" src="images\project-head-bw.png" alt="Projects"></div>
     <section class="projects">
         <p class="command hidden"><span class="typing">> executing ../ZURUFIKAR/projects</span></p>
-    
         <div class="projects-layout">
             <!-- Sidebar with Project Names -->
             <aside class="sidebar">
-                <h3>Projects</h3>
+                <div class="project-title"><h3>../projects</h3><div>v0.7</div></div>
                 <ul id="project-list">
                     <!-- Project list will be added dynamically -->
                 </ul>
@@ -133,9 +131,10 @@
     
             <!-- Project Details Section -->
             <div class="projects-container">
-                <div id="project-details">
+                <div id="project-details" style="display: flex; flex-direction: column;">
                     <h2>Select a project</h2>
                     <p>Click on a project from the left to view details.</p>
+                    <img src="images/sticker1.png" style="width: 150px;">
                 </div>
             </div>
         </div>
@@ -223,7 +222,7 @@
     </div>
 
     <script src="test.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="node_modules/sweetalert2/sweetalert2.d.ts"></script>
 
 </body>
 </html>

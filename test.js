@@ -70,14 +70,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const skills = {
     hard: [
-        { name: "HTML & CSS", level: "learning" },
-        { name: "PYTHON", level: "familiar" },
+        { name: "HTML", level: "very" },
+        { name: "CSS", level: "familiar" },
+        { name: "PYTHON", level: "very" },
+        { name: "JS", level: "familiar" },
         { name: "C#", level: "somewhat" },
-        { name: "GODOT", level: "familiar" },
-        { name: "GODOT", level: "familiar" }
+        { name: "JAVA", level: "familiar" }, { name: "php", level: "somewhat" }, { name: "mySQL", level: "somewhat" },
+        { name: "ReactJS", level: "somewhat" }, { name: "Vue", level: "learning" }, { name: "TailwindCSS", level: "somewhat" }, { name: "Lua", level: "somewhat" },
+        { name: "Figma", level: "familiar" }, { name: "phpMyAdmin", level: "familiar" },
+        { name: "Godot", level: "learning" },
+        { name: "PYGAME", level: "somewhat" },
+        { name: "SAP", level: "somewhat" },
+        { name: "Jira", level: "somewhat" }, { name: "Cisco P.T.", level: "somewhat" }
     ],
     soft: [
-        { name: "CSS", level: "familiar" },{ name: "WORK IN PROGRESS!!", level: "familiar" }
+        { name: "Front-End Development", level: "general" },{ name: "UI Design", level: "general" }, { name: "UX Research", level: "general" }, { name: "Machine Learning", level: "general" },
+        { name: "People Management", level: "general" },{ name: "Public Speaking", level: "general" },
+        { name: "Effective Communicatiion", level: "general" },{ name: "English (C2 ESL/8.0 IELTS)", level: "general" }
     ]
 };
 
@@ -140,30 +149,83 @@ hiddenElements.forEach((el) => observe.observe(el));
 
 const projects = [
     {
-        title: "IISMA SHEET",
+        title: "ZURUFIKAR.DEV",
         description: "My personal portfolio built with HTML, CSS, and JavaScript.",
         tags: ["Web Dev", "Portfolio"],
         resources: ["HTML", "CSS", "JS"],
-        img: "images/portfolio.png",
+        img: "images/project/ranok base.jpg",
         icon: "images/m2.png",
+        category: "web",
         date: "2024 - Present"
     },
     {
-        title: "Platformer Game",
-        description: "A 2D platformer built in Godot.",
+        title: "ZURUFIKAR.DEV",
+        description: "My personal portfolio built with HTML, CSS XXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXX.",
         tags: ["Game Dev"],
-        resources: ["Godot", "C#"],
-        img: "images/game.png",
+        resources: ["Godot", "C#", 'CSS'],
+        img: "images/project/ranok base.jpg",
         icon: "icons/game-icon.png",
+        category: "game",
         date: "2023 - 2024"
     },
     {
-        title: "AI Chatbot",
-        description: "An AI chatbot using NLP techniques.",
+        title: "Kaggle - Cassava Leaf",
+        description: ".",
         tags: ["AI", "Machine Learning"],
         resources: ["Python", "TensorFlow"],
         img: "images/chatbot.png",
         icon: "icons/chatbot-icon.png",
+        category: "ai",
+        date: "2024"
+    },
+    {
+        title: "Academify",
+        description: ".",
+        tags: ["AI", "Machine Learning"],
+        resources: ["Python", "TensorFlow"],
+        img: "images/chatbot.png",
+        icon: "icons/chatbot-icon.png",
+        category: "ai",
+        date: "2024"
+    },
+    {
+        title: "Task Manager",
+        description: ".",
+        tags: ["AI", "Machine Learning"],
+        resources: ["Python", "TensorFlow"],
+        img: "images/chatbot.png",
+        icon: "icons/chatbot-icon.png",
+        category: "ai",
+        date: "2024"
+    },
+    {
+        title: "Telkomedika Website",
+        description: ".",
+        tags: ["AI", "Machine Learning"],
+        resources: ["Python", "TensorFlow"],
+        img: "images/chatbot.png",
+        icon: "icons/chatbot-icon.png",
+        category: "ai",
+        date: "2024"
+    },
+    {
+        title: "OrbitSMP",
+        description: ".",
+        tags: ["AI", "Machine Learning"],
+        resources: ["Python", "TensorFlow"],
+        img: "images/chatbot.png",
+        icon: "icons/chatbot-icon.png",
+        category: "ai",
+        date: "2024"
+    },
+    {
+        title: "ExemplifySMP",
+        description: ".",
+        tags: ["AI", "Machine Learning"],
+        resources: ["Python", "TensorFlow"],
+        img: "images/chatbot.png",
+        icon: "icons/chatbot-icon.png",
+        category: "ai",
         date: "2024"
     }
 ];
@@ -171,10 +233,10 @@ const projects = [
 const projectList = document.getElementById("project-list");
 const projectDetails = document.getElementById("project-details");
 
-// Load project list in sidebar with images
+// Load project list in sidebar with category-based classes
 projects.forEach((proj, index) => {
     const li = document.createElement("li");
-    li.classList.add("project-item");
+    li.classList.add("project-item", proj.category); // Add category class
     li.setAttribute("data-index", index);
 
     const img = document.createElement("img");
@@ -198,18 +260,32 @@ function displayProject(index) {
     const proj = projects[index];
 
     projectDetails.innerHTML = `
-        <h2>${proj.title}</h2>
-        <img src="${proj.img}" alt="${proj.title}">
-        <p>${proj.description}</p>
-        <div class="tags">
-            ${proj.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        <img src="${proj.img}" alt="Project image" class="project-detail-img">
+        
+        <div class="project-header">
+            <h2 class='project-title ${proj.category}'>${proj.title}</h2>
         </div>
-        <div class="resources">
-            ${proj.resources.map(res => `<span class="resource">${res}</span>`).join('')}
+        
+        <div class="project-description">
+            <div class='desc-left'>
+                <div class="tags">
+                ${proj.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join('')}</div>
+                <p class='text-desc'>${proj.description}</p>
+            </div>
+            <div class="desc-right">
+                <div class="resources">
+                    ${proj.resources.map(res => `<span class="resource">${res}</span>`).join('')}
+                </div>
+                <div class="project-date">
+                    <span>Project Start/End</span><br>
+                    <span>${proj.date}</span>
+                </div>
+            </div>
         </div>
-        <p class="date">${proj.date}</p>
+        
+        <div class="project-footer">
+        </div>
     `;
-
     // Remove active class from all and add to selected
     document.querySelectorAll(".project-item").forEach(item => item.classList.remove("active"));
     document.querySelector(`[data-index="${index}"]`).classList.add("active");
