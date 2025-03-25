@@ -16,9 +16,10 @@
     display: flex;
     max-width: 1400px;
     padding-left: 40px;
-    padding-right: 50px;
-    padding-bottom: 20px;
+    padding-right: 40px;
+    padding-bottom: 30px;
     margin: auto;
+    padding-top: 80px;
 }
 .projects .command {
     margin-bottom: 30px;
