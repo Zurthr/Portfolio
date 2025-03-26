@@ -270,6 +270,22 @@
 
 /* ML - Front End - Full Stack - Game Dev - Non IT - Web Dev -  */
 /* Project category colors */
-.project-item.game { border-left-color: #FFD700; } /* Game Dev */
-.project-item.ai { border-left-color: #FF5722; } /* AI Projects */
-.project-item.web { border-left-color: #4CAF50; } /* Web Projects */
+.project-item.web { border-left-color: #B1368D ; } 
+.project-item.fr { border-left-color: #6141A1 ; }
+.project-item.fs { border-left-color: #58A1CF ; } 
+.project-item.game { border-left-color: #85E0C1 ; }
+.project-item.nit { border-left-color: #E7C174    ; } 
+.project-item.ml { border-left-color: #E18C73  ; } 
+
+.web-dev { background-color: #B1368D95 ; } 
+.front-end { background-color: #6141A195  ; } 
+.full-stack { background-color: #58A1CF95 ; }
+.game-dev { background-color: #85E0C195  ; } 
+.non-it { background-color: #E7C17495     ; } 
+.machine-learning { background-color: #E18C7395  ; } 
+/* .ml-tag { background-color: #B1368D ; } 
+.fr-tag { background-color: #6141A1 ; } 
+.fs-tag { background-color: #58A1CF ; }
+.game-tag { background-color: #85E0C1 ; } 
+.nit-tag { background-color: #E7C174    ; } 
+.webtag { background-color: #E18C73  ; }  */

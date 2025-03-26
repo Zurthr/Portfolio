@@ -151,20 +151,20 @@ const projects = [
     {
         title: "ZURUFIKAR.DEV",
         description: "My personal portfolio built with HTML, CSS, and JavaScript.",
-        tags: ["Web Dev", "Portfolio"],
+        tags: ["Web Dev",'Front-End', "Portfolio"],
         resources: ["HTML", "CSS", "JS"],
-        img: "images/project/ranok base.jpg",
-        icon: "images/m2.png",
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
         category: "web",
         date: "2024 - Present"
     },
     {
         title: "ZURUFIKAR.DEV",
-        description: "My personal portfolio built with HTML, CSS XXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXX.",
+        description: "My personal portfolio built with HTML, CSS IM LIMIT TESTING THE SCROLLLLLLLLLLLLLLLLLLLL XXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXX.",
         tags: ["Game Dev"],
         resources: ["Godot", "C#", 'CSS'],
-        img: "images/project/ranok base.jpg",
-        icon: "icons/game-icon.png",
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
         category: "game",
         date: "2023 - 2024"
     },
@@ -173,8 +173,8 @@ const projects = [
         description: ".",
         tags: ["AI", "Machine Learning"],
         resources: ["Python", "TensorFlow"],
-        img: "images/chatbot.png",
-        icon: "icons/chatbot-icon.png",
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
         category: "ai",
         date: "2024"
     },
@@ -183,8 +183,8 @@ const projects = [
         description: ".",
         tags: ["AI", "Machine Learning"],
         resources: ["Python", "TensorFlow"],
-        img: "images/chatbot.png",
-        icon: "icons/chatbot-icon.png",
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
         category: "ai",
         date: "2024"
     },
@@ -193,8 +193,8 @@ const projects = [
         description: ".",
         tags: ["AI", "Machine Learning"],
         resources: ["Python", "TensorFlow"],
-        img: "images/chatbot.png",
-        icon: "icons/chatbot-icon.png",
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
         category: "ai",
         date: "2024"
     },
@@ -203,8 +203,8 @@ const projects = [
         description: ".",
         tags: ["AI", "Machine Learning"],
         resources: ["Python", "TensorFlow"],
-        img: "images/chatbot.png",
-        icon: "icons/chatbot-icon.png",
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
         category: "ai",
         date: "2024"
     },
@@ -213,8 +213,8 @@ const projects = [
         description: ".",
         tags: ["AI", "Machine Learning"],
         resources: ["Python", "TensorFlow"],
-        img: "images/chatbot.png",
-        icon: "icons/chatbot-icon.png",
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
         category: "ai",
         date: "2024"
     },
@@ -223,8 +223,8 @@ const projects = [
         description: ".",
         tags: ["AI", "Machine Learning"],
         resources: ["Python", "TensorFlow"],
-        img: "images/chatbot.png",
-        icon: "icons/chatbot-icon.png",
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
         category: "ai",
         date: "2024"
     }
@@ -269,7 +269,7 @@ function displayProject(index) {
         <div class="project-description">
             <div class='desc-left'>
                 <div class="tags">
-                ${proj.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join('')}</div>
+                ${proj.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')} ${proj.category}-tag">${tag}</span>`).join('')}</div>
                 <p class='text-desc'>${proj.description}</p>
             </div>
             <div class="desc-right">
