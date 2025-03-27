@@ -36,7 +36,8 @@ html {
 
 /* Left Side - Text */
 .text-content {
-    max-width: 50%;
+    max-width: 40%;
+    margin-right:5%;
 }
 
 h1 {
@@ -219,4 +220,32 @@ h1 {
 .five{
     transition-delay: 2000ms;
     transition-duration: 1.5s;   
+}
+
+.socialshero{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.socialshero p{
+    transition-delay: 2400ms;
+    transition-duration: 0.8s; 
+}
+
+.socialshero a:first-child{
+    transition-delay: 2900ms;
+    transition-duration: 0.8s; 
+}
+
+.socialshero a:nth-child(2){
+    transition-delay: 3200ms;
+    transition-duration: 1s; 
+}
+
+.socialshero a:last-child{
+    transition-delay: 3600ms;
+    transition-duration: 1.2s; 
 }

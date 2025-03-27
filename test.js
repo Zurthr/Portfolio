@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof Swal !== "undefined") {
         Swal.fire({
             text: "Warning! This website is still a work in progress!",
-            theme: 'auto',timerProgressBar: true, timer:3000,
+            theme: 'dark',timerProgressBar: true, timer:3000,
             showConfirmButton: true,
             confirmButtonText: 'Okay!',
             iconHtml: '<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjc1b3dkNG16NmU1MGptZnJqZTIxcnRxcml2aXhmZHduMDV2Y2FiciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/zkZNJRDU4sS8YfCjQv/giphy.gif" width="160">',
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (/Mobi|Android|iPhone|iPod/i.test(navigator.userAgent)) {
         Swal.fire({
             text: "Smaller mobile devices aren't supported. For the best experience, please switch to 'Desktop Mode' or open this in your desktop.",
-            theme:'auto', showConfirmButton: false, timerProgressBar: true, timer:10000,
+            theme:'dark', showConfirmButton: false, timerProgressBar: true, timer:10000,
             iconHtml: "<img src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZ4MnR5dWVhazJ6bTRqeHFnbjdyeGo1a2FlN3FjNjJ0dWU1cXN2dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/X9XShudHCX2WwRTF6v/giphy.gif'width='160'>"
         });
     }
@@ -75,10 +75,38 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const targetId = link.textContent.replace(/[<>]/g, '');
             
-            smoothScroll(targetId);
+            if (targetId.toLowerCase() === 'resume') {
+                // Trigger SweetAlert instead of smooth scroll
+                Swal.fire({
+                    title: 'Resume',
+                    text: 'Would you like to view or download my resume?',
+                    iconHtml: '<img src="images/resume.png" width="120">',
+                    theme: 'dark',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'View 👀',
+                    denyButtonText: 'Download 📂',
+                    cancelButtonText: 'Cancel',
+                    reverseButtons: true,
+                    customClass: {
+                        confirmButton: 'resume-button-confirm',
+                        denyButton: 'resume-button-deny',
+                        cancelButton: 'resume-button-cancel'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.open('/path/to/resume.pdf', '_blank');
+                    } else if (result.isDenied) {
+                        window.open('/path/to/resume download.pdf', '_blank');
+                    }
+                });
+            } else {
+                smoothScroll(targetId);
+            }
         });
     });
 });
+
 
 const observeCommand = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -351,3 +379,15 @@ function displayProject(index) {
 window.onload = function() {
     window.scrollTo(0, 0);
 }
+
+Swal.fire({
+    title: 'Success!',
+    text: 'Redirecting...',
+    icon: 'success',
+    showConfirmButton: true,
+    confirmButtonText: 'Go to Page'
+}).then((result) => {
+    if (result.isConfirmed) {
+        window.location.href = '/target-page';
+    }
+});

@@ -51,7 +51,8 @@ animation: types 3s steps(3) infinite;
 
 @keyframes types {
 40%,
-60%{left:calc(100% + 10px);}
+60%{left:calc(100% + 10px);
+width: 40%;}
 100% {left:0;}
 }
 
@@ -74,4 +75,28 @@ padding-left:0px;
 
 .navbar a:hover {
     color: #ffcc99;
+}
+
+.resume-button-cancel{
+    background-color: #f9c79480;}
+.resume-button-cancel:hover{
+    background-color: #f9c794;
+    transform: scale(1.1,1.1);
+    transition: 0.5s ease;
+}
+
+.resume-button-deny{
+    background-color: #99ffff80;}
+.resume-button-deny:hover{
+    background-color: #99ffff;
+    transform: scale(1.1,1.1);
+    transition: 0.5s ease;
+}
+
+.resume-button-confirm{
+    background-color: #9cff9980;}
+.resume-button-confirm:hover{
+    background-color: #9cff99;
+    transform: scale(1.1,1.1);
+    transition: 0.5s ease;
 }
