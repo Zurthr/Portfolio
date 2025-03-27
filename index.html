@@ -26,28 +26,36 @@
     </nav>
     <section id='me' class="hero-section">
         <div class="text-content">
-            <p class="command hidden" style="margin-bottom: 20px;"><span class="typing">> executing ../ZURUFIKAR/me</span>
+            <p class="command hiddencommand" style="margin-bottom: 20px;"><span class="typing">> executing ../ZURUFIKAR/me</span>
             </p></p>
-            <h1>Hey there, <br> I'm <span class="highlight">Zur!</span></h1>
-            <p class="description">
+            <h1 class="one hiddenhero">Hey there, </h1>
+            <h1 class="two hiddenhero"> I'm <span class="highlight hiddenhero three">Zur!</span></h1>
+            <p class="description four hiddenhero">
                 I’m an <strong>IT enthusiast</strong> currently interested in 
                 <span class="highlight">Web Design</span>, 
                 <span class="highlight">Front-end Engineering</span>, and 
                 <span class="highlight">Data Mining</span>.
             </p>
-            <p class="description">
+            <p class="description five hiddenhero">
                 <strong>Other</strong> than code-related activities, I have tons of experiences in 
                 <span class="highlight">organizations</span>, especially with 
                 <span class="highlight">leading</span> and/or <span class="highlight">managerial</span> positions.
             </p>
+            <div class="socialshero" style="display: flex; flex-direction: column; margin-top: 20px;">
+                <p>Find me on:</p>
+                <div class="social-icons">
+                    <a href="https://github.com/your-profile" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="32" height="32">
+                    </a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="32" height="32">
+                    </a>
+                    <a href="https://instagram.com/your-profile" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="32" height="32">
+                    </a>
+            </div></div>
 
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-
-            <p class="command command-mquee hidden" style="margin-bottom: 20px;"><span class="typing">> ‘ZURUFIKAR’ is PART of...</span></p>
+            <p class="command command-mquee hiddencommand" style="margin-bottom: 20px;"><span class="typing">> ‘ZURUFIKAR’ is PART of...</span></p>
         </div>
 
         <div class="image-content">
@@ -84,10 +92,10 @@
     </section>
 
     <section class="skillset">
-        <p class="command hidden" style="margin-bottom: 20px;"><span class="typing">> SELECT 'skills' FROM ‘ZURUFIKAR’</span></p>
+        <p class="command hiddencommand" style="margin-bottom: 20px;"><span class="typing">> SELECT 'skills' FROM ‘ZURUFIKAR’</span></p>
     </section>
 
-    <div class="terminal">
+    <div class="terminal hidden">
         <div class="terminal-header">
             <p>> Found <span id="result-count">0</span> results related to ‘skills’ from ‘<span id="username">ZURUFIKAR</span>’</p>
         </div>
@@ -116,110 +124,129 @@
     </div>
 
     <section id="projects">
-    <div class="img proj">
-    <img class="project-img-head" src="images\project-head-bw2.png" alt="Projects"></div>
-    <section class="projects">
-        <p class="command hidden"><span class="typing">> executing ../ZURUFIKAR/projects</span></p>
-        <div class="projects-layout">
-            <!-- Sidebar with Project Names -->
-            <aside class="sidebar">
-                <div class="project-title"><h3>../projects</h3><div>v0.7</div></div>
-                <ul id="project-list">
-                    <!-- Project list will be added dynamically -->
-                </ul>
-            </aside>
-    
-            <!-- Project Details Section -->
-            <div class="projects-container">
-                <div id="project-details" style="display: flex; flex-direction: column;">
-                    <h2>Select a project</h2>
-                    <p>Click on a project from the left to view details.</p>
-                    <img src="images/sticker1.png" style="width: 150px;">
+        <div class="img proj">
+        <img class="project-img-head" src="images\project-head-bw2.png" alt="Projects"></div>
+        <section class="projects">
+            <p class="command hiddencommand"><span class="typing">> executing ../ZURUFIKAR/projects</span></p>
+            <div class="projects-layout hidden">
+                <aside class="sidebar">
+                    <div class="project-title"><h3>../projects</h3><div>v0.7</div></div>
+                    <ul id="project-list">
+                    </ul>
+                </aside>
+
+                <div class="projects-container">
+                    <div id="project-details" style="display: flex; flex-direction: column;">
+                        <h2>Select a project</h2>
+                        <p>Click on a project from the left to view details.</p>
+                        <img src="images/sticker1.png" style="width: 150px;">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section></section>
-
-        <!-- Achievements -->
+        </section>
     </section>
-    <div class="exp-container">
-        <p class="exp-header">EXPERIENCES</p>
-    </div>
-    <div class="achievements-container">
-        <div class="achievements-grid">
 
-            <!-- IISMA AI1 -->
-            <div class="achievement-card">
-                <div>
-                    <img class='ai'src="images\ai1.png" alt="IISMA Representative">
-                    <video class='aih'src="images\ai1h.mp4" alt="IISMA Representative" autoplay width="200px" muted height="180px"></div>
-                <div class="achievement-info">
-                    <h3>Student Representative of IISMA Nanyang Technological University</h3>
-                    <p class="subtitle">‘leading leaders’<br>3/2024-3/2025</p>
-                    <button class="info-btn">?</button>
+    <section id="experiences" class="experiences">
+        <p class="command hiddencommand" style="margin-bottom: 20px;"><span class="typing">> executing ../ZURUFIKAR/experiences</span>
+        <div class="exp-container">
+            <div class="exp-command"><p class="command hiddencommand" style="margin-bottom: 20px;"><span class="typing">> executing ../ZURUFIKAR/experiences</span></div>
+            <div></div>
+            <div class="exp-header">
+                <p class="exp-title">EXPERIENCES</p>
+                <p class="exp-description">
+                    For all the time I've spent in university, I've been involved in various organizations and activities, each shaping my 
+                    view of the world and honing skills in differing ways. From my first step as a JoinAIESEC in Bandung member to my proudest as Student 
+                    Representative of IISMA NTU, each contribute an indellible piece to my growth as a person and leader, and each can be viewed below with details. Enjoy!
+                </p>
+                <p class="exp-title" style="position: absolute; bottom: 0;">HIGHLIGHTS</p>
+            </div>
+    
+            <div class="exp-item">
+                <div class="recommendation-container">
+                    <p class="exp-title" style="font-size: 3rem;">ENDORSEMENTS</p>
+                    <div>Work In Progress</div>
+                </div>
+            </div>
+    
+            <div class="exp-item">
+                <div class="achievement-card">
+                    <div>
+                        <img class='ai'src="images\ai1.png" alt="IISMA Representative">
+                        <video class='aih'src="images\ai1h.mp4" alt="IISMA Representative" autoplay width="200px" muted height="180px"></div>
+                    <div class="achievement-info">
+                        <h3>Student Representative of IISMA Nanyang Technological University</h3>
+                        <p class="subtitle">‘leading leaders’<br>3/2024-3/2025</p>
+                        <button class="info-btn">?</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- TFT AI2 -->
-            <div class="achievement-card">
-                <div>
-                    <img class='ai'src="images\ai2.png" alt="TEAM Speaker">
-                    <img class='aih'src="images\ai2h.png" alt="TEAM Speaker"></div>
-                <div class="achievement-info">
-                    <h3>Speaker for TEAM’s Training for Trainers</h3>
-                    <p class="subtitle">‘inspiring others’<br>2/2025</p>
-                    <button class="info-btn">?</button>
+            <div class="exp-item">
+                <div class="achievement-card">
+                    <div>
+                        <img class='ai'src="images\ai2.png" alt="TEAM Speaker">
+                        <img class='aih'src="images\ai2h.png" alt="TEAM Speaker"></div>
+                    <div class="achievement-info">
+                        <h3>Speaker for TEAM’s Training for Trainers</h3>
+                        <p class="subtitle">‘inspiring others’<br>2/2025</p>
+                        <button class="info-btn">?</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- SES AI3 -->
-            <div class="achievement-card">
-                <div>
-                    <img class='ai'src="images\ai3.png" alt="SES President">
-                    <img class='aih'src="images\ai3h.png" alt="SES President"></div>
-                <div class="achievement-info">
-                    <h3 style='margin-bottom:15px;'>President of Student English Society at Telkom University<br></h3>
-                    <p class="subtitle">‘blazing ambitions’<br>2024-present</p>
-                    <button class="info-btn">?</button>
+            <div class="exp-item">
+                <div class="achievement-card">
+                    <div>
+                        <img class='ai'src="images\ai3.png" alt="SES President">
+                        <img class='aih'src="images\ai3h.png" alt="SES President"></div>
+                    <div class="achievement-info">
+                        <h3 style='margin-bottom:15px;'>President of Student English Society at Telkom University<br></h3>
+                        <p class="subtitle">‘blazing ambitions’<br>2024-present</p>
+                        <button class="info-btn">?</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- AIESEC NTU AI4 -->
-            <div class="achievement-card">
-                <div>
-                    <img class='ai'src="images\ai4.png" alt="TM in AIESEC NTU">
-                    <video class='aih'src="images\ai4h.mp4" alt="TM in AIESEC NTU" muted autoplay></div>
-                <div class="achievement-info">
-                    <h3>Emcee and Talent Management Member at AIESEC in NTU, Singapore</h3>
-                    <p class="subtitle">‘motivating peers alike'<br>8/2024-12/2024</p>
-                    <button class="info-btn">?</button>
+            <div class="exp-item">
+                <div class="achievement-card">
+                    <div>
+                        <img class='ai'src="images\ai4.png" alt="TM in AIESEC NTU">
+                        <video class='aih'src="images\ai4h.mp4" alt="TM in AIESEC NTU" muted autoplay></div>
+                    <div class="achievement-info">
+                        <h3>Emcee and Talent Management Member at AIESEC in NTU, Singapore</h3>
+                        <p class="subtitle">‘motivating peers alike'<br>8/2024-12/2024</p>
+                        <button class="info-btn">?</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- AIESEC BDG AI5 -->
-            <div class="achievement-card">
-                <div>
-                    <img class='ai'src="images\ai5.png" alt="AIESEC in Bandung">
-                    <img class='aih'src="images\ai5h.png" alt="AIESEC in Bandung"></div>
-                <div class="achievement-info">
-                    <h3>AIESEC in Bandung ‘23 Probation Finisher as OGTa LCVP & OGX LC</h3>
-                    <p class="subtitle">‘the first step’<br>2023-2024</p>
-                    <button class="info-btn">?</button>
+            <div class="exp-item">
+                <div class="achievement-card">
+                    <div>
+                        <img class='ai'src="images\ai5.png" alt="AIESEC in Bandung">
+                        <img class='aih'src="images\ai5h.png" alt="AIESEC in Bandung"></div>
+                    <div class="achievement-info">
+                        <h3>AIESEC in Bandung ‘23 Probation Finisher as OGTa LCVP & OGX LC</h3>
+                        <p class="subtitle">‘the first step’<br>2023-2024</p>
+                        <button class="info-btn">?</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- DATMIN AI6 -->
-            <div class="achievement-card">
-                <div>
-                    <img class='ai'src="images\ai6.png" alt="DATMIN KOOR">
-                    <video class='aih'src="images\ai6h.mp4" alt="DATMIN KOOR" autoplay muted></div>
-                <div class="achievement-info">
-                    <h3 style='margin-bottom:15px;'>Data Mining Practicum Coordinator at DASPRO<br></h3>
-                    <p class="subtitle">‘guiding guidance'<br>2/2025-present</p>
-                    <button class="info-btn">?</button>
+            <div class="exp-item">
+                <div class="achievement-card">
+                    <div>
+                        <img class='ai'src="images\ai6.png" alt="DATMIN KOOR">
+                        <video class='aih'src="images\ai6h.mp4" alt="DATMIN KOOR" autoplay muted></div>
+                    <div class="achievement-info">
+                        <h3 style='margin-bottom:15px;'>Data Mining Practicum Coordinator at DASPRO<br></h3>
+                        <p class="subtitle">‘guiding guidance'<br>2/2025-present</p>
+                        <button class="info-btn">?</button>
+                    </div>
                 </div>
             </div>
 
+            
         </div>
     </div>
 

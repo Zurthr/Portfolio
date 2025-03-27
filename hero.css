@@ -62,6 +62,18 @@ h1 {
     display: inline-block;
 }
 
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e4b38f;
+}
 /* Marquee Logo Organisasi */
 .mquee{
     display: flex;
@@ -127,6 +139,33 @@ h1 {
     min-width: 30%;
 }
 
+.image-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #242424;
+    pointer-events: none;
+    animation: reveal-maskhero 1.5s steps(15,end) forwards,  blink 0.6s infinite;;
+    animation-delay: 2s;
+}
+
+@keyframes reveal-maskhero {
+    1% {
+        height: 100%;
+        border-bottom: 10px rgba(193, 193, 193, 0.263) solid;
+    }
+    99%{
+        border-bottom: 10px rgba(193, 193, 193, 0.263) solid;
+        height: 1%;
+    }
+    100% {
+        border-bottom: 0 solid;
+        height: 0%;
+}}
+
 .image-content img {
     width: 100%;
     height: auto;
@@ -149,4 +188,35 @@ h1 {
 .conf-button{
     border-radius: 5px;
     background-color: #b5df717e;
+}
+
+.hiddenhero {
+    opacity: 0;
+    transform: translateX(-30%);
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.showhero {
+    transform: translateX(0%);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.two {
+    transition-delay: 600ms;
+}
+
+.three {
+    transition-delay: 1200ms;
+}
+
+.four{
+    transition-delay: 1600ms;
+    transition-duration: 1.5s;   
+}
+
+.five{
+    transition-delay: 2000ms;
+    transition-duration: 1.5s;   
 }

@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (/Mobi|Android|iPhone|iPod/i.test(navigator.userAgent)) {
         Swal.fire({
             text: "Smaller mobile devices aren't supported. For the best experience, please switch to 'Desktop Mode' or open this in your desktop.",
-            theme:'auto', showConfirmButton: false, timerProgressBar: true, timer:5000,
+            theme:'auto', showConfirmButton: false, timerProgressBar: true, timer:10000,
             iconHtml: "<img src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZ4MnR5dWVhazJ6bTRqeHFnbjdyeGo1a2FlN3FjNjJ0dWU1cXN2dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/X9XShudHCX2WwRTF6v/giphy.gif'width='160'>"
         });
     }
@@ -79,6 +79,63 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+const observeCommand = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showcommand');
+
+            // Restart typing animation
+            let typingElement = entry.target.querySelector('.typing');
+            if (typingElement) {
+                typingElement.style.animation = 'none'; // Reset animation
+                void typingElement.offsetWidth; // Force reflow to restart animation
+                typingElement.style.animation = 'typing 2s steps(20, end) forwards, blink 0.6s infinite';
+            }
+        } else {
+            entry.target.classList.remove('showcommand');
+        }
+    });
+});
+
+const hiddenElementsCommand = document.querySelectorAll('.hiddencommand');
+hiddenElementsCommand.forEach((el) => observeCommand.observe(el));
+
+const observe = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            let maskElement = entry.target.querySelector('.showmask');
+            if (maskElement) {
+                maskElement.style.animation = 'none'; 
+                void maskElement.offsetWidth; 
+                maskElement.style.animation = 'mask 1.5s steps(15,end) forwards';
+            }
+        }
+        else {
+            entry.target.classList.remove('show');
+        }
+    }, {
+        threshold: 0.01
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observe.observe(el));
+
+//hero so that gk se buggy itu PLEASEEEE
+const observeHero = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showhero');
+        }
+    }, {
+        threshold: 0.01
+    });
+});
+
+const hiddenHero = document.querySelectorAll('.hiddenhero');
+hiddenHero.forEach((el) => observeHero.observe(el));
 
 function smoothScroll(targetId) {
     const targetElement = document.getElementById(targetId);
@@ -146,29 +203,6 @@ function renderSkills() {
     document.getElementById("result-count").innerText = skills.hard.length + skills.soft.length;
 }
 document.addEventListener("DOMContentLoaded", renderSkills);
-
-
-const observe = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-
-            // Restart typing animation
-            let typingElement = entry.target.querySelector('.typing');
-            if (typingElement) {
-                typingElement.style.animation = 'none'; // Reset animation
-                void typingElement.offsetWidth; // Force reflow to restart animation
-                typingElement.style.animation = 'typing 2s steps(20, end) forwards, blink 0.6s infinite';
-            }
-        } else {
-            entry.target.classList.remove('show');
-        }
-    });
-});
-
-const hiddenElements = document.querySelectorAll('.hidden, .exp-header');
-hiddenElements.forEach((el) => observe.observe(el));
-
 
 const projects = [
     {
@@ -312,4 +346,8 @@ function displayProject(index) {
     // Remove active class from all and add to selected
     document.querySelectorAll(".project-item").forEach(item => item.classList.remove("active"));
     document.querySelector(`[data-index="${index}"]`).classList.add("active");
+}
+
+window.onload = function() {
+    window.scrollTo(0, 0);
 }

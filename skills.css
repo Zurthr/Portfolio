@@ -120,11 +120,21 @@
     font-size: 18px;
 }
 
+.skilltag:hover{
+    transform: scale(1.1,1.1);
+    transition: 0.5s ease;
+}
+
 .learning { background-color: #c03a2b81;} 
+.learning:hover { background-color: #c03a2b;} 
 .familiar { background-color: #6cc76880; } 
+.familiar:hover { background-color: #6cc768; } 
 .somewhat { background-color: #e1aa7380; } 
+.somewhat:hover { background-color: #e1aa73; } 
 .very { background-color: #5caca18f; } 
+.very:hover { background-color: #5caca1; } 
 .general { background-color: #a85cac8f; font-size: 1rem; } 
+.general:hover { background-color: #a85cac; } 
 
 .legend {
     margin-top: 25px;
