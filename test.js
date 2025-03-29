@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Initialize Floating Blocks
     const container = document.querySelector(".floating-container");
-    const codeSnippets = ["<div>", "function(draw)", "function(rawr)", '#26CEAA', "let x = 420;", "</html>", "waffles!", "setNPC", "#078D70", "print(ehe XP)"];
+    const codeSnippets = ["<div>", "function(draw)","/denizen","/PAPI install", "function(rawr)", '#26CEAA', "let x = 420;", "</html>", "waffles!", "setNPC", "#078D70", "print(ehe XP)"];
 
     function createBlock() {
         const block = document.createElement("div");
@@ -16,10 +16,48 @@ document.addEventListener("DOMContentLoaded", () => {
             block.remove();
         }, duration * 1000 + 500);
     }
-
+    
     setInterval(createBlock, 500);
 
-    // Reset video in achievement cards
+    function resumeSwal() {
+        Swal.fire({
+            title: 'Resume',
+            text: 'Would you like to view or download my resume?',
+            iconHtml: '<img src="images/resume.png" width="120">',
+            theme: 'dark',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'View 👀',
+            denyButtonText: 'Download 📂',
+            cancelButtonText: 'Cancel',
+            reverseButtons: true,
+            customClass: {
+                confirmButton: 'resume-button-confirm',
+                denyButton: 'resume-button-deny',
+                cancelButton: 'resume-button-cancel'
+            },
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInDown
+                animate__faster
+                `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__backOutDown
+                animate__faster
+                `
+            }}).then((result) => {
+                if (result.isConfirmed) {
+                    window.open('/path/to/resume.pdf', '_blank');
+                } else if (result.isDenied) {
+                    window.open('/path/to/resume download.pdf', '_blank');
+                }
+            });
+        }
+
     document.querySelectorAll(".achievement-card").forEach((card, index) => {
         const video = card.querySelector("video");
 
@@ -77,29 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             if (targetId.toLowerCase() === 'resume') {
                 // Trigger SweetAlert instead of smooth scroll
-                Swal.fire({
-                    title: 'Resume',
-                    text: 'Would you like to view or download my resume?',
-                    iconHtml: '<img src="images/resume.png" width="120">',
-                    theme: 'dark',
-                    showDenyButton: true,
-                    showCancelButton: true,
-                    confirmButtonText: 'View 👀',
-                    denyButtonText: 'Download 📂',
-                    cancelButtonText: 'Cancel',
-                    reverseButtons: true,
-                    customClass: {
-                        confirmButton: 'resume-button-confirm',
-                        denyButton: 'resume-button-deny',
-                        cancelButton: 'resume-button-cancel'
-                    }
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.open('/path/to/resume.pdf', '_blank');
-                    } else if (result.isDenied) {
-                        window.open('/path/to/resume download.pdf', '_blank');
-                    }
-                });
+                resumeSwal()
             } else {
                 smoothScroll(targetId);
             }
@@ -391,3 +407,138 @@ Swal.fire({
         window.location.href = '/target-page';
     }
 });
+
+const timelineData = [
+    {
+        date: "January 2020",
+        title: "Project Inception",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem. Aliquam a nulla felis. Proin ac ipsum eu libero volutpat malesuada."
+    },
+    {
+        date: "March 2020",
+        title: "Design Phase",
+        description: "Fusce efficitur sapien in eros varius, nec tincidunt est pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+    },
+    {
+        date: "June 2020",
+        title: "Development Starts",
+        description: "Sed vel massa vel dui eleifend commodo. Nullam quis dui nec lorem interdum ullamcorper at quis massa. Pellentesque non efficitur nisi."
+    },
+    {
+        date: "October 2020",
+        title: "First Release",
+        description: "Cras sapien tellus, faucibus non varius vitae, iaculis vel massa. Curabitur volutpat elementum justo, ac porttitor est maximus vitae."
+    },
+    {
+        date: "February 2021",
+        title: "Major Update",
+        description: "Maecenas faucibus mauris lectus, in bibendum nunc consequat quis. Sed rhoncus nisi at magna sagittis facilisis. Cras sollicitudin lacus vitae odio tempus."
+    },
+    {
+        date: "August 2021",
+        title: "International Launch",
+        description: "Donec vitae neque quis mauris dictum venenatis. Integer malesuada neque id fermentum semper. Aenean at dui justo."
+    },
+    {
+        date: "January 2020",
+        title: "Project Inception",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem. Aliquam a nulla felis. Proin ac ipsum eu libero volutpat malesuada."
+    },
+    {
+        date: "March 2020",
+        title: "Design Phase",
+        description: "Fusce efficitur sapien in eros varius, nec tincidunt est pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+    },
+    {
+        date: "June 2020",
+        title: "Development Starts",
+        description: "Sed vel massa vel dui eleifend commodo. Nullam quis dui nec lorem interdum ullamcorper at quis massa. Pellentesque non efficitur nisi."
+    },
+    {
+        date: "October 2020",
+        title: "First Release",
+        description: "Cras sapien tellus, faucibus non varius vitae, iaculis vel massa. Curabitur volutpat elementum justo, ac porttitor est maximus vitae."
+    },
+    {
+        date: "February 2021",
+        title: "Major Update",
+        description: "Maecenas faucibus mauris lectus, in bibendum nunc consequat quis. Sed rhoncus nisi at magna sagittis facilisis. Cras sollicitudin lacus vitae odio tempus."
+    },
+    {
+        date: "August 2021",
+        title: "International Launch",
+        description: "Donec vitae neque quis mauris dictum venenatis. Integer malesuada neque id fermentum semper. Aenean at dui justo."
+    }
+];
+
+// Function to create a timeline item
+function createTimelineItem(data) {
+    const timelineItem = document.createElement('div');
+    timelineItem.className = 'timeline-item';
+    
+    const timelineContent = document.createElement('div');
+    timelineContent.className = 'timeline-content ${category}';
+    
+    // Create date element
+    const dateElement = document.createElement('span');
+    dateElement.className = 'date';
+    dateElement.textContent = data.date;
+    
+    // Create title element
+    const titleElement = document.createElement('h2');
+    titleElement.className = 'title';
+    titleElement.textContent = data.title;
+    
+    // Create description element
+    const descriptionElement = document.createElement('p');
+    descriptionElement.className = 'description';
+    descriptionElement.textContent = data.description;
+    
+    // Append elements to timeline content
+    timelineContent.appendChild(dateElement);
+    timelineContent.appendChild(titleElement);
+    timelineContent.appendChild(descriptionElement);
+    
+    // Append content to timeline item
+    timelineItem.appendChild(timelineContent);
+    
+    return timelineItem;
+}
+
+// Function to add multiple timeline items
+function addTimelineItems(timelineData) {
+    const timelineContainer = document.getElementById('timeline-container');
+    
+    timelineData.forEach(data => {
+        const timelineItem = createTimelineItem(data);
+        timelineContainer.appendChild(timelineItem);
+    });
+    
+    // Initialize the intersection observer after adding items
+    initIntersectionObserver();
+}
+
+
+        let observer;
+        
+        function initIntersectionObserver() {
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('shownorm');
+                    } else {
+                        entry.target.classList.remove('shownorm');
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            addTimelineItems(timelineData);
+        });
