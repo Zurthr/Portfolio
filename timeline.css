@@ -1,11 +1,15 @@
-.timeline {
-    position: relative;
+.timeline-head{
     max-width: 1200px;
     margin: auto;
     margin-top: 50px;
+    padding:50px;
     padding-top: 30px;
     height: 1200px;
     max-height: 1200px;
+}
+
+.timeline {
+    position: relative;
     overflow-y: scroll;
     position: relative;
     scrollbar-width: thin;
