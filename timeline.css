@@ -4,25 +4,44 @@
     margin: auto;
     margin-top: 50px;
     padding-top: 30px;
+    height: 1200px;
+    max-height: 1200px;
+    overflow-y: scroll;
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: #242424 #242424;
 }
 
 .timeline::after {
     content: '';
     position: absolute;
-    width: 6px;
+    width: 3px;
     background-color: #ffffff;
     top: 0;
     bottom: 0;
     left: 50%;
+    height: 3600px;
     margin-left: -3px;
     border-radius: 10px;
+    animation:moveline 15s forwards linear;
+    z-index: -10;
+}
+
+@keyframes moveline {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 3600px;
+    }
+    
 }
 
 .timeline::before {
     content: '';
     position: absolute;
     width: 80%;
-    height:5px;
+    height:2px;
     left:10%;
     background-color: #ffffff;
     top: 0;
@@ -64,9 +83,13 @@
     transform: translateX(0);
 }
 
+.timeline-item:nth-child(even).shownorm::after {
+    transform: translateX(0);
+}
+
 .timeline-content {
     padding: 20px 30px;
-    background-color: white;
+    background-color: #353535;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -78,7 +101,7 @@
     border-right: 5px solid #e74c3c;
 }
 
-.timeline-item::after {
+/* .timeline-item::after {
     content: '';
     position: absolute;
     width: 20px;
@@ -94,7 +117,46 @@
 
 .timeline-item:nth-child(even)::after {
     left: -14px;
+} */
+
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    top: 50%;
+    z-index: 1;
 }
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+    right: -14px;
+    border-left: 15px solid #353535;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    left: -14px;
+    border-right: 15px solid #353535;
+}
+
+.timeline-content img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 50%;
+    z-index: 10;
+}
+
+.timeline-item:nth-child(odd) .timeline-content img {
+    right: -3.7vw;
+}
+
+.timeline-item:nth-child(even) .timeline-content img {
+    left: -3.7vw;
+}
+
 
 .date {
     display: inline-block;
@@ -107,15 +169,6 @@
     margin-bottom: 15px;
 }
 
-.title {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #2c3e50;
-}
-
-.description {
-    color: #7f8c8d;
-}
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {

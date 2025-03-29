@@ -411,73 +411,38 @@ Swal.fire({
 const timelineData = [
     {
         date: "January 2020",
-        title: "Project Inception",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem. Aliquam a nulla felis. Proin ac ipsum eu libero volutpat malesuada."
+        title: "Teel satu Inception",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "path/to/image1.jpg"
     },
     {
         date: "March 2020",
-        title: "Design Phase",
-        description: "Fusce efficitur sapien in eros varius, nec tincidunt est pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+        title: "Teel dua Phase",
+        description: "Fusce efficitur sapien in eros varius, nec tincidunt est pretium.",
+        image: "path/to/image2.jpg"
     },
     {
         date: "June 2020",
-        title: "Development Starts",
-        description: "Sed vel massa vel dui eleifend commodo. Nullam quis dui nec lorem interdum ullamcorper at quis massa. Pellentesque non efficitur nisi."
-    },
-    {
-        date: "October 2020",
-        title: "First Release",
-        description: "Cras sapien tellus, faucibus non varius vitae, iaculis vel massa. Curabitur volutpat elementum justo, ac porttitor est maximus vitae."
-    },
-    {
-        date: "February 2021",
-        title: "Major Update",
-        description: "Maecenas faucibus mauris lectus, in bibendum nunc consequat quis. Sed rhoncus nisi at magna sagittis facilisis. Cras sollicitudin lacus vitae odio tempus."
-    },
-    {
-        date: "August 2021",
-        title: "International Launch",
-        description: "Donec vitae neque quis mauris dictum venenatis. Integer malesuada neque id fermentum semper. Aenean at dui justo."
-    },
-    {
-        date: "January 2020",
-        title: "Project Inception",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum tortor sem. Aliquam a nulla felis. Proin ac ipsum eu libero volutpat malesuada."
-    },
-    {
-        date: "March 2020",
-        title: "Design Phase",
-        description: "Fusce efficitur sapien in eros varius, nec tincidunt est pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
-    },
-    {
-        date: "June 2020",
-        title: "Development Starts",
-        description: "Sed vel massa vel dui eleifend commodo. Nullam quis dui nec lorem interdum ullamcorper at quis massa. Pellentesque non efficitur nisi."
-    },
-    {
-        date: "October 2020",
-        title: "First Release",
-        description: "Cras sapien tellus, faucibus non varius vitae, iaculis vel massa. Curabitur volutpat elementum justo, ac porttitor est maximus vitae."
-    },
-    {
-        date: "February 2021",
-        title: "Major Update",
-        description: "Maecenas faucibus mauris lectus, in bibendum nunc consequat quis. Sed rhoncus nisi at magna sagittis facilisis. Cras sollicitudin lacus vitae odio tempus."
-    },
-    {
-        date: "August 2021",
-        title: "International Launch",
-        description: "Donec vitae neque quis mauris dictum venenatis. Integer malesuada neque id fermentum semper. Aenean at dui justo."
+        title: "Teel tigasatu",
+        description: "Sed vel massa vel dui eleifend commodo.",
     }
 ];
 
-// Function to create a timeline item
 function createTimelineItem(data) {
     const timelineItem = document.createElement('div');
     timelineItem.className = 'timeline-item';
     
     const timelineContent = document.createElement('div');
-    timelineContent.className = 'timeline-content ${category}';
+    timelineContent.className = 'timeline-content';
+    
+    // Create image element if available
+    if (data.image) {
+        const imageElement = document.createElement('img');
+        imageElement.className = 'timeline-image';
+        imageElement.src = data.image;
+        imageElement.alt = data.title;
+        timelineContent.appendChild(imageElement);
+    }
     
     // Create date element
     const dateElement = document.createElement('span');
@@ -517,6 +482,7 @@ function addTimelineItems(timelineData) {
     // Initialize the intersection observer after adding items
     initIntersectionObserver();
 }
+
 
 
         let observer;
