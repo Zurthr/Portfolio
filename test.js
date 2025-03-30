@@ -165,6 +165,7 @@ const observe = new IntersectionObserver((entries) => {
 });
 
 const hiddenElements = document.querySelectorAll('.hidden');
+
 hiddenElements.forEach((el) => observe.observe(el));
 
 //hero so that gk se buggy itu PLEASEEEE
@@ -278,7 +279,7 @@ const projects = [
         icon: "images/project/wip-icon.png",
         category: "ml",
         date: "2024",
-        link:'sex.com',
+        link:'try.com',
         buttonText: "View on GitHub"
     },
     {
