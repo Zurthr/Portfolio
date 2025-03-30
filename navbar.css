@@ -30,13 +30,13 @@
     animation: colorShift 3.2s steps(2) infinite;
     font-weight:bold;
 }
-.dot{
+.dots{
 margin-left:0px;
 color:#FFFFFF;
 position:relative;
 }
 
-.dot::after{
+.dots::after{
 content:'';
 border-left:2px solid #ffffff;
 position:absolute;

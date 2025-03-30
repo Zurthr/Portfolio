@@ -260,24 +260,26 @@ const projects = [
         date: "2024 - Present"
     },
     {
-        title: "ZURUFIKAR.DEV",
-        description: "My personal portfolio built with HTML, CSS IM LIMIT TESTING THE SCROLLLLLLLLLLLLLLLLLLLL XXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXX.",
+        title: "Spellbound - Words of Yore",
+        description: "A 2D RPG game made with Godot, featuring a unique battle system that stems from general JRPGs fused with Bookworm mechanics. Still in the works!",
         tags: ["Game Dev"],
-        resources: ["Godot", "C#", 'CSS'],
-        img: "images/project/wip-img.png",
+        resources: ["Godot", "C#", 'Aseprite'],
+        img: ["images/project/ranok base.jpg","images/project/wip-img.png"],
         icon: "images/project/wip-icon.png",
         category: "game",
-        date: "2023 - 2024"
+        date: "2/2025 - Present"
     },
     {
-        title: "Kaggle - Cassava Leaf",
-        description: ".",
-        tags: ["AI", "Machine Learning"],
-        resources: ["Python", "TensorFlow"],
+        title: "Kaggle - Cassava Leaf Disease Classification",
+        description: "My first ever Machine Learning project, as well as Kaggle Competition, that was done for a project in NTU with IISMA friends. We did this project and (would have, comparitively) placed top 30% with EfficientNetV2",
+        tags: ["Machine Learning"],
+        resources: ["Python", "Seaborn","Kaggle"],
         img: "images/project/wip-img.png",
         icon: "images/project/wip-icon.png",
-        category: "ai",
-        date: "2024"
+        category: "ml",
+        date: "2024",
+        link:'sex.com',
+        buttonText: "View on GitHub"
     },
     {
         title: "Academify",
@@ -290,14 +292,14 @@ const projects = [
         date: "2024"
     },
     {
-        title: "Task Manager",
-        description: ".",
-        tags: ["AI", "Machine Learning"],
-        resources: ["Python", "TensorFlow"],
+        title: "Task List",
+        description: "My first ever 'web dev' project, done in 5 hours, using HTML, CSS (and bootstrap), and mySQL to connect to a database. Stores tasks and their statuses, and simple features such as CRUD for task entries with an additional button to quickly mark tasks as done, and a feature that lets you export your tasks to excel and csv.",
+        tags: ["Web Dev"],
+        resources: ["MySql", "HTML","CSS","Bootstrap"],
         img: "images/project/wip-img.png",
         icon: "images/project/wip-icon.png",
-        category: "ai",
-        date: "2024"
+        category: "web",
+        date: "December 2024"
     },
     {
         title: "Telkomedika Website",
@@ -307,7 +309,7 @@ const projects = [
         img: "images/project/wip-img.png",
         icon: "images/project/wip-icon.png",
         category: "ai",
-        date: "2024"
+        date: ""
     },
     {
         title: "OrbitSMP",
@@ -337,7 +339,7 @@ const projectDetails = document.getElementById("project-details");
 // Load project list in sidebar with category-based classes
 projects.forEach((proj, index) => {
     const li = document.createElement("li");
-    li.classList.add("project-item", proj.category); // Add category class
+    li.classList.add("project-item", proj.category);
     li.setAttribute("data-index", index);
 
     const img = document.createElement("img");
@@ -350,27 +352,47 @@ projects.forEach((proj, index) => {
 
     li.appendChild(img);
     li.appendChild(span);
-
     li.addEventListener("click", () => displayProject(index));
 
     projectList.appendChild(li);
 });
 
-// Function to update project details
+let currentSlideIndex = 0;
+
+let slideInterval; // Store interval globally
+
 function displayProject(index) {
     const proj = projects[index];
+    const images = Array.isArray(proj.img) ? proj.img : [proj.img];
+    
+    // Default behavior: Show nothing if no link exists
+    const projectButton = proj.link 
+        ? `<a href="${proj.link}" target="_blank" class="project-link-btn">${proj.buttonText || "View Project"}</a>` 
+        : ""; 
+
+    const sliderImages = images.map((img, i) => `
+        <img src="${img}" class="slide ${i === 0 ? 'active' : ''}" alt="Project Image ${i+1}">
+    `).join('');
+
+    const sliderDots = images.length > 1 ? images.map((_, i) => `
+        <span class="dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>
+    `).join('') : "";
 
     projectDetails.innerHTML = `
-        <img src="${proj.img}" alt="Project image" class="project-detail-img">
-        
+        <div class="image-slider">
+            <div class="slider-container">${sliderImages}</div>
+            <div class="slider-dots">${sliderDots}</div>
+        </div>
+
         <div class="project-header">
             <h2 class='project-title ${proj.category}'>${proj.title}</h2>
         </div>
-        
+
         <div class="project-description">
             <div class='desc-left'>
                 <div class="tags">
-                ${proj.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')} ${proj.category}-tag">${tag}</span>`).join('')}</div>
+                    ${proj.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')} ${proj.category}-tag">${tag}</span>`).join('')}
+                </div>
                 <p class='text-desc'>${proj.description}</p>
             </div>
             <div class="desc-right">
@@ -381,32 +403,66 @@ function displayProject(index) {
                     <span>Project Start/End</span><br>
                     <span>${proj.date}</span>
                 </div>
+                ${projectButton} <!-- Only displays if a link exists -->
             </div>
         </div>
-        
-        <div class="project-footer">
-        </div>
     `;
-    // Remove active class from all and add to selected
+
+
+    currentSlideIndex = 0; // Reset slider to first image
+    clearInterval(slideInterval);
+
+    document.querySelectorAll(".dot").forEach(dot => {
+        dot.addEventListener("click", (e) => {
+            showSlide(parseInt(e.target.dataset.index));
+            resetAutoSlide(); 
+        });
+    });
+
+    // Multi img auto slide
+    if (images.length > 1) {
+        slideInterval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+    }
+
     document.querySelectorAll(".project-item").forEach(item => item.classList.remove("active"));
     document.querySelector(`[data-index="${index}"]`).classList.add("active");
+}
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    if (!slides.length) return;
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+
+    currentSlideIndex = index;
+}
+
+//Auto next slide
+function nextSlide() {
+    const slides = document.querySelectorAll(".slide");
+    if (!slides.length) return;
+
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    showSlide(currentSlideIndex);
+}
+
+function resetAutoSlide() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => {
+        nextSlide();
+    }, 5000);
 }
 
 window.onload = function() {
     window.scrollTo(0, 0);
 }
-
-Swal.fire({
-    title: 'Success!',
-    text: 'Redirecting...',
-    icon: 'success',
-    showConfirmButton: true,
-    confirmButtonText: 'Go to Page'
-}).then((result) => {
-    if (result.isConfirmed) {
-        window.location.href = '/target-page';
-    }
-});
 
 const timelineData = [
     {

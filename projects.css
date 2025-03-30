@@ -132,7 +132,6 @@
     color: white;
     height: 450px;
     display: flex;
-    min-width: fit-content;
     flex-direction: column;
     overflow: hidden;
 }
@@ -289,3 +288,57 @@
 .game-tag { background-color: #85E0C1 ; } 
 .nit-tag { background-color: #E7C174    ; } 
 .webtag { background-color: #E18C73  ; }  */
+
+/* Image Slider Wrapper */
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    max-height: 260px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Positioning the dots over the image */
+.slider-dots {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.3); /* Slight background for visibility */
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white; /* Fully white for active dot */
+}

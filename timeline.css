@@ -8,12 +8,30 @@
     max-height: 1200px;
 }
 
+.tl-contain{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: (200px+fit-content);
+    margin: auto;
+    padding: 20px;
+    padding-top: 15px;
+    border-radius: 10px;
+    /* background: #353535; */
+    border: 2px solid white;
+}
+
 .timeline {
     position: relative;
+    border-radius: 10px;
     overflow-y: scroll;
     position: relative;
     scrollbar-width: thin;
-    scrollbar-color: #242424 #242424;
+    width: 100%;
+    scrollbar-color: #24242499 #24242499;
+    /* background-color: #24242490; */
 }
 
 .timeline::after {
@@ -28,7 +46,7 @@
     margin-left: -3px;
     border-radius: 10px;
     animation:moveline 15s forwards linear;
-    z-index: -10;
+    z-index: 1;
 }
 
 @keyframes moveline {
@@ -174,7 +192,7 @@
 }
 
 
-/* Responsive Design */
+
 @media screen and (max-width: 768px) {
     .timeline::after {
         left: 31px;

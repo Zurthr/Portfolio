@@ -11,8 +11,8 @@ body {
     background-color: #242424;
     color: white;
     padding-top:40px;
-    padding-left:90px;
-    padding-right:90px;
+    /* padding-left:90px;
+    padding-right:90px; */
     scrollbar-width: thin;
 
 }
