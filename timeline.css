@@ -19,7 +19,7 @@
     padding: 20px;
     padding-top: 15px;
     border-radius: 10px;
-    /* background: #353535; */
+    background: #242424;
     border: 2px solid white;
 }
 
@@ -27,9 +27,10 @@
     position: relative;
     border-radius: 10px;
     overflow-y: scroll;
-    position: relative;
     scrollbar-width: thin;
     width: 100%;
+    height: 1000px;
+    max-height: 1000px;
     scrollbar-color: #24242499 #24242499;
     /* background-color: #24242490; */
 }
@@ -115,12 +116,12 @@
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    border-left: 5px solid #e74c3c;
+    border-left: 5px solid #ffffff;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
     border-left: none;
-    border-right: 5px solid #e74c3c;
+    border-right: 5px solid #ffffff;
 }
 
 /* .timeline-item::after {
@@ -164,27 +165,25 @@
 
 .timeline-content img {
     position: absolute;
-    width: 40px;
     height: 40px;
     border-radius: 50%;
     top: 50%;
-    z-index: 10;
+    z-index: 15;
+    object-fit: cover;
+    width: fit-content;
+    height: 40px;
+    border-radius: 5px;
+    right: 1vw;
+    top: 15px;
 }
 
-.timeline-item:nth-child(odd) .timeline-content img {
-    right: -3.7vw;
-}
-
-.timeline-item:nth-child(even) .timeline-content img {
-    left: -3.7vw;
-}
 
 
 .date {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #3498db;
-    color: white;
+    background-color: #e1c46c;
+    color: rgb(108, 98, 76);
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: 4px;

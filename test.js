@@ -258,17 +258,39 @@ const projects = [
         img: "images/project/wip-img.png",
         icon: "images/project/wip-icon.png",
         category: "web",
-        date: "2024 - Present"
+        date: "March 2025"
     },
     {
         title: "Spellbound - Words of Yore",
-        description: "A 2D RPG game made with Godot, featuring a unique battle system that stems from general JRPGs fused with Bookworm mechanics. Still in the works!",
+        description: "A 2D RPG game made with Godot, featuring a unique battle system that stems from general JRPGs fused with Bookworm mechanics. Still in the works! Entry for Compfest UI 2025 amen",
         tags: ["Game Dev"],
         resources: ["Godot", "C#", 'Aseprite'],
-        img: ["images/project/ranok base.jpg","images/project/wip-img.png"],
+        img: ["images/project/wip-img.png"],
         icon: "images/project/wip-icon.png",
         category: "game",
-        date: "2/2025 - Present"
+        date: "Currently Working On"
+    },
+    {
+        title: "SES Website",
+        description: "A side project that me and a peer from SES are wokring on to revitalize the SES website to highlight our work better and further.",
+        tags: ["Web Dev",
+            "Front-End", "Organizational"
+        ],
+        resources: ["CSS", "ReactJS","Typescript"],
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
+        category: "web",
+        date: "Currently Working On",
+    },
+    {
+        title: "Kaggle - Loan Approval Prediction",
+        description: "A side project that I did in my free time. Got an accuracy score of 0.96097 in the Private Leaderboard",
+        tags: ["Machine Learning"],
+        resources: ["Python", "Catbus","Kaggle"],
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
+        category: "ml",
+        date: "2025",
     },
     {
         title: "Kaggle - Cassava Leaf Disease Classification",
@@ -281,6 +303,18 @@ const projects = [
         date: "2024",
         link:'try.com',
         buttonText: "View on GitHub"
+    },
+    {
+        title: "Fruity Froggy",
+        description: "A 2D RPG game made with Pygame, featuring multiple enemy, obstacle, and status effect varieties that present as both help and hindrance to Froggy. This was a side project back in 2023 that I did within a week.",
+        tags: ["Game Dev"],
+        resources: ["Pygame", "Python", 'Aseprite'],
+        img: ["images/project/ranok base.jpg","images/project/wip-img.png"],
+        icon: "images/project/Bananas.png",
+        category: "game",
+        date: "2023, somewhen",
+        buttonText: "View on GitHub",
+        link:'https://github.com/Zurthr/Fruity-Froggy'
     },
     {
         title: "Academify",
@@ -464,25 +498,81 @@ function resetAutoSlide() {
 window.onload = function() {
     window.scrollTo(0, 0);
 }
-
+// m1-m9
+// IISMA, IISMA SG, AIESEC NTU, AIESEC BDG, DASPRO, EDM, HMSI, SES, NTU CYBERSEC
 const timelineData = [
     {
-        date: "January 2020",
-        title: "Teel satu Inception",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        image: "path/to/image1.jpg"
+        date: "March 2025 - Present",
+        title: "Data Mining Practicum Coordinator at DASPRO",
+        description: "Acted as a coordinator for the Data Mining Practicum, overseeing the course and ensuring its smooth operation.",
+        image: "images/m5.png"
     },
     {
-        date: "March 2020",
-        title: "Teel dua Phase",
-        description: "Fusce efficitur sapien in eros varius, nec tincidunt est pretium.",
-        image: "path/to/image2.jpg"
+        date: "December 2024 - Present",
+        title: "President of SES Telkom University",
+        description: "Elected as President of Student English Society at Telkom University, leading the organization and its activities for the academic year.",
+        image: "images/m8.png"
     },
     {
-        date: "June 2020",
-        title: "Teel tigasatu",
-        description: "Sed vel massa vel dui eleifend commodo.",
-    }
+        date: "March 2024 - March 2025",
+        title: "Student Representative of IISMA Nanyang Technological University 2024",
+        image: "images/m1.png",
+        description: "Elected as the leader and coordinator for IISMA students at Nanyang Technological University, Singapore, representing the interests of IISMA students and facilitating communication with IISMA (Kemendikbud) and NTU Singapore.",
+    },
+    {
+        date: "Feb 28 2025",
+        title: "Speaker on TEAM (Telkom University Education Movement)'s Training for Trainers",
+        description: "Spoke on and presented about mastering English in a training/teaching environment, as well as general english for professional settings to around 120 members of TEAM.",
+        image: "images/m8.png"
+    },
+    {
+        date: "August 2024 - January 2025",
+        title: "Education Advocate and Content Creator for SMBTelkomuniversity",
+        description: "Created content based on IISMA and Education Abroad (10 videos on Instagram) which featured: experiences attained during IISMA, skills and experiences needed to attain similar scholarhsips, as well as general educational tips and tricks for students to study abroad.",
+        image: "images/m10.png"
+    },
+    {
+        date: "November 2025",
+        title: "Speaker on DeepTalk LIVE on Telkom University's Instagram page",
+        description: "Spoke on and presented about obtaining scholarships to study abroad such as IISMA to promote student mobility within Telkom.",
+        image: "images/m10.png"
+    },
+    {
+        date: "August - December 2025",
+        title: "AIESEC in NTU - Talent Management Member",
+        description: "Coordinated as well as Emceed most of the weekly Local Commitee Meetings in AIESEC in NTU. Helped manage AIESEC members in NTU's work dynamics. Worked with OGX to promote AIESEC global exchanges in North Spine, NTU, multiple times.",
+        image: "images/m3.png"
+    },
+    {
+        date: "August - December 2025",
+        title: "NTU Cybersecurity Club - Member",
+        description: "Participated in various cybersecurity events and workshops in order to further deepen my skills and knowledge in the field.",
+        image: "images/m9.png"
+    },
+    {
+        date: "August - December 2025",
+        title: "NTU WSC - RSPID Volunteer",
+        description: "Coordinated as well as Emceed most of the weekly Local Commitee Meetings in AIESEC in NTU. Helped manage AIESEC members in NTU's work dynamics. Worked with OGX to promote AIESEC global exchanges in North Spine, NTU, multiple times.",
+        image: "images/m3.png"
+    },
+    {
+        date: "January - March 2024",
+        title: "Project Manager of SES GNU",
+        description: "Appointed as Project Manager of Student English Society's annual Gathering and Upgrading event. Coordinated multiple divisions in order to ensure the smoothness of the event for around three months.",
+        image: "images/m8.png"
+    },
+    {
+        date: "October - January 2024",
+        title: "AIESEC in Bandung Probation Member",
+        description: "Finished the probation for JoinAIESEC in Bandung. Worked in the Outgoing Talents and Outgoing Exchange departments, attending international discussions with AIESEC from Taiwan and the Philipphines, as well as acted as the Finance LCVP (Vice-Pres / Department Lead) for an OGTa Project.",
+        image: "images/m4.png"
+    },
+    {
+        date: "Feb 28 2025",
+        title: "Speaker at TEAM (Telkom University Education Movement)'s Training for Trainers",
+        description: "Spoke on and presented about mastering English in a training/teaching environment, as well as general english for professional settings to around 120 members of TEAM.",
+        image: "images/m8.png"
+    },
 ];
 
 function createTimelineItem(data) {
@@ -492,7 +582,6 @@ function createTimelineItem(data) {
     const timelineContent = document.createElement('div');
     timelineContent.className = 'timeline-content';
     
-    // Create image element if available
     if (data.image) {
         const imageElement = document.createElement('img');
         imageElement.className = 'timeline-image';
@@ -501,27 +590,22 @@ function createTimelineItem(data) {
         timelineContent.appendChild(imageElement);
     }
     
-    // Create date element
     const dateElement = document.createElement('span');
     dateElement.className = 'date';
     dateElement.textContent = data.date;
     
-    // Create title element
     const titleElement = document.createElement('h2');
     titleElement.className = 'title';
     titleElement.textContent = data.title;
     
-    // Create description element
     const descriptionElement = document.createElement('p');
     descriptionElement.className = 'description';
     descriptionElement.textContent = data.description;
     
-    // Append elements to timeline content
     timelineContent.appendChild(dateElement);
     timelineContent.appendChild(titleElement);
     timelineContent.appendChild(descriptionElement);
-    
-    // Append content to timeline item
+
     timelineItem.appendChild(timelineContent);
     
     return timelineItem;
@@ -540,28 +624,66 @@ function addTimelineItems(timelineData) {
     initIntersectionObserver();
 }
 
+    let observer;
 
-
-        let observer;
-        
-        function initIntersectionObserver() {
-            observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('shownorm');
-                    } else {
-                        entry.target.classList.remove('shownorm');
-                    }
-                });
-            }, {
-                threshold: 0.2
+    function initIntersectionObserver() {
+        observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('shownorm');
+                } else {
+                    entry.target.classList.remove('shownorm');
+                }
             });
-
-            document.querySelectorAll('.timeline-item').forEach(item => {
-                observer.observe(item);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            addTimelineItems(timelineData);
+        }, {
+            threshold: 0.2
         });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        addTimelineItems(timelineData);
+    });
+
+let scrollInterval;
+let scrollingDown = true;
+
+function loopSmoothScroll() {
+    let timeline = document.querySelector('.timeline');
+    if (!timeline) return;
+
+    function startScrolling() {
+        scrollInterval = setInterval(() => {
+            if (scrollingDown) {
+                // Scroll down
+                if (timeline.scrollTop < timeline.scrollHeight - timeline.clientHeight) {
+                    timeline.scrollTop += 1.8;
+                } else {
+                    scrollingDown = false; 
+                }
+            } else {
+                // Scroll up
+                if (timeline.scrollTop > 0) {
+                    timeline.scrollTop -= 2;
+                } else {
+                    scrollingDown = true;
+                }
+            }
+        }, 15); 
+    }
+
+    function stopScrolling() {
+        clearInterval(scrollInterval);
+    }
+
+    startScrolling();
+
+    // hover control
+    timeline.addEventListener("mouseenter", stopScrolling);
+    timeline.addEventListener("mouseleave", startScrolling);
+}
+
+window.onload = loopSmoothScroll;
