@@ -306,7 +306,7 @@ const projects = [
     },
     {
         title: "Fruity Froggy",
-        description: "A 2D RPG game made with Pygame, featuring multiple enemy, obstacle, and status effect varieties that present as both help and hindrance to Froggy. This was a side project back in 2023 that I did within a week.",
+        description: "A 2D Platformer game made with Pygame, featuring multiple enemy, obstacle, and status effect varieties that present as both help and hindrance to Froggy. This was a side project back in 2023 that I did within a week. Available on: https://zurthr.itch.io/fruity-froggy and GitHub",
         tags: ["Game Dev"],
         resources: ["Pygame", "Python", 'Aseprite'],
         img: ["images/project/ranok base.jpg","images/project/wip-img.png"],
@@ -504,7 +504,7 @@ const timelineData = [
     {
         date: "March 2025 - Present",
         title: "Data Mining Practicum Coordinator at DASPRO",
-        description: "Acted as a coordinator for the Data Mining Practicum, overseeing the course and ensuring its smooth operation.",
+        description: "Elected as coordinator for the Data Mining Practicum, overseeing the course and ensuring its smooth operation.",
         image: "images/m5.png"
     },
     {
@@ -552,8 +552,8 @@ const timelineData = [
     {
         date: "August - December 2025",
         title: "NTU WSC - RSPID Volunteer",
-        description: "Coordinated as well as Emceed most of the weekly Local Commitee Meetings in AIESEC in NTU. Helped manage AIESEC members in NTU's work dynamics. Worked with OGX to promote AIESEC global exchanges in North Spine, NTU, multiple times.",
-        image: "images/m3.png"
+        description: "Volunteered and 'Teachered' intellectually disabled members of the Singaporean society. Mostly active in Woodlands Garden School.",
+        image: "images/m11.webp"
     },
     {
         date: "January - March 2024",
@@ -562,16 +562,22 @@ const timelineData = [
         image: "images/m8.png"
     },
     {
-        date: "October - January 2024",
+        date: "October'23 - January'24",
         title: "AIESEC in Bandung Probation Member",
         description: "Finished the probation for JoinAIESEC in Bandung. Worked in the Outgoing Talents and Outgoing Exchange departments, attending international discussions with AIESEC from Taiwan and the Philipphines, as well as acted as the Finance LCVP (Vice-Pres / Department Lead) for an OGTa Project.",
         image: "images/m4.png"
     },
     {
-        date: "Feb 28 2025",
-        title: "Speaker at TEAM (Telkom University Education Movement)'s Training for Trainers",
-        description: "Spoke on and presented about mastering English in a training/teaching environment, as well as general english for professional settings to around 120 members of TEAM.",
-        image: "images/m8.png"
+        date: "September - December 2023",
+        title: "Design and PR Member of Koalisi HMSI",
+        description: "Koalisi is a volunteer organization focused on helping the needy around Bandung. Lead and was in charge of the design and content for HMSI 2023's Social Media pages",
+        image: "images/m7.png"
+    },
+    {
+        date: "October'22 - January'23",
+        title: "AIESEC Future Leader in AIESEC in UNSOED",
+        description: "Participated in AIESEC Future Leader, where I attended many seminars regarding multiple soft skills such as interpersonal communication, effective leadership, etc. My first organizational experience in uni.",
+        image: "images/m4.png"
     },
 ];
 
