@@ -138,7 +138,7 @@
 
 .projects-container img {
     width: 100%;
-    max-width: 100%;
+    max-width: 755px;
     height: auto;
     max-height: 260px;
     overflow: hidden;
@@ -174,10 +174,9 @@
     text-align: left;
     width: 60%;
     max-height: 80%;
-    flex-shrink: 1; /* Allows it to shrink if necessary */
-    white-space: normal; /* Allows text wrapping */
-    word-break: break-word; /* Ensures long words don’t stretch the container */
-}
+    flex-shrink: 1; 
+    white-space: normal; 
+    word-break: break-word; }
 .resources {
     display: flex;
     gap: 5px;
@@ -194,12 +193,12 @@
     font-size: 14px;
 }
 .text-desc{
-    overflow-y: auto; /* Enables scrolling */
+    overflow-y: auto; 
     max-height: 70px;
     scrollbar-width: thin;
     scrollbar-color: #242424 #242424;
-    direction: rtl; /* This flips the scrolling direction */
-    unicode-bidi: plaintext; /* Ensures text still reads left to right */
+    direction: rtl; 
+    unicode-bidi: plaintext;
 }
 .project-description {
     display: flex;
@@ -215,7 +214,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto; /* Push to bottom */
+    margin-top: auto; 
 }
 
 .tags {
@@ -286,17 +285,17 @@
 /* Project category colors */
 .project-item.web { border-left-color: #B1368D ; } 
 .project-item.fr { border-left-color: #6141A1 ; }
-.project-item.fs { border-left-color: #58A1CF ; } 
+.project-item.ml { border-left-color: #58A1CF ; } 
 .project-item.game { border-left-color: #85E0C1 ; }
 .project-item.nit { border-left-color: #E7C174    ; } 
-.project-item.ml { border-left-color: #E18C73  ; } 
+.project-item.fs { border-left-color: #E18C73  ; } 
 
 .web-dev { background-color: #B1368D95 ; } 
 .front-end { background-color: #6141A195  ; } 
-.full-stack { background-color: #58A1CF95 ; }
+.machine-learning { background-color: #58A1CF95 ; }
 .game-dev { background-color: #85E0C195  ; } 
 .non-it { background-color: #E7C17495     ; } 
-.machine-learning { background-color: #E18C7395  ; } 
+.full-stack { background-color: #E18C7395  ; } 
 /* .ml-tag { background-color: #B1368D ; } 
 .fr-tag { background-color: #6141A1 ; } 
 .fs-tag { background-color: #58A1CF ; }
@@ -313,6 +312,7 @@
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .slider-container {
@@ -324,30 +324,77 @@
     width: 100%;
     display: none;
     border-radius: 10px;
-    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+    opacity: 0;
+    transform: translateX(100%); 
+    animation: slideIn 7s ease-in-out; 
 }
 
 .slide.active {
     display: block;
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideIn 7s ease-in-out forwards; }
+
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50%); }
+    15%{
+        opacity: 1;
+        transform: translateX(0); 
+    }
+    
+    85% {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
 }
 
-/* Positioning the dots over the image */
 .slider-dots {
     position: absolute;
-    bottom: 10px; /* Adjust as needed */
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 8px;
-    background: rgba(0, 0, 0, 0.3); /* Slight background for visibility */
+    justify-content: center;
+    align-items: center;
     padding: 5px 10px;
     border-radius: 15px;
-}
+    background-color: #3d3d3d4a; 
+    animation: revealBg 7s linear infinite;
+  }
+  
+  .slider-dots::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #ededef5a; 
+    clip-path: inset(0 100% 0 0); 
+    animation: revealMask 7s linear infinite;
+    border-radius: 15px;
+    z-index: 0;
+  }
+  
+  .slider-dots > * {
+    position: relative;
+    z-index: 1; 
+  }
+  
+  @keyframes revealMask {
+    0%   { clip-path: inset(0 100% 0 0); }
+    100% { clip-path: inset(0 0 0 0); }
+  }
 
 .dot {
     height: 10px;
     width: 10px;
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
@@ -355,5 +402,5 @@
 }
 
 .dot.active {
-    background-color: white; /* Fully white for active dot */
+    background-color: white; 
 }

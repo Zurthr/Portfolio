@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check for mobile devices no ipad (big enf)
     if (/Mobi|Android|iPhone|iPod/i.test(navigator.userAgent)) {
         Swal.fire({
-            text: "Smaller mobile devices aren't supported. For the best experience, please switch to 'Desktop Mode' or open this in your desktop.",
+            text: "Smaller mobile devices aren't supported yet! Please open this in your desktop or at try 'desktop mode'. Implenting responsiveness soon!",
             theme:'dark', showConfirmButton: false, timerProgressBar: true, timer:10000,
             iconHtml: "<img src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjZ4MnR5dWVhazJ6bTRqeHFnbjdyeGo1a2FlN3FjNjJ0dWU1cXN2dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/X9XShudHCX2WwRTF6v/giphy.gif'width='160'>"
         });
@@ -223,8 +223,6 @@ function renderSkills() {
         console.error("Error: One or both skill containers are missing.");
         return;
     }
-
-    // Clear previous content
     hardContainer.innerHTML = "";
     softContainer.innerHTML = "";
 
@@ -236,7 +234,7 @@ function renderSkills() {
         hardContainer.appendChild(skilltag);
     });
 
-    // Soft Skills
+    // Soft 
     skills.soft.forEach(skill => {
         const skilltag = document.createElement("span");
         skilltag.classList.add("skilltag", skill.level);
@@ -244,7 +242,6 @@ function renderSkills() {
         softContainer.appendChild(skilltag);
     });
 
-    // Update result count dynamically
     document.getElementById("result-count").innerText = skills.hard.length + skills.soft.length;
 }
 document.addEventListener("DOMContentLoaded", renderSkills);
@@ -255,7 +252,7 @@ const projects = [
         description: "My personal portfolio built with HTML, CSS, and JavaScript.",
         tags: ["Web Dev",'Front-End', "Portfolio"],
         resources: ["HTML", "CSS", "JS"],
-        img: "images/project/wip-img.png",
+        img: ["images/project/ZurufikarMain.png","images/project/ZurufikarFigma.png","images/project/ZurufikarCode.png"],
         icon: "images/project/wip-icon.png",
         category: "web",
         date: "March 2025"
@@ -288,28 +285,28 @@ const projects = [
         tags: ["Machine Learning"],
         resources: ["Python", "Catbus","Kaggle"],
         img: "images/project/wip-img.png",
-        icon: "images/project/wip-icon.png",
+        icon: "images/project/kaggle.png",
         category: "ml",
         date: "2025",
     },
     {
         title: "Kaggle - Cassava Leaf Disease Classification",
-        description: "My first ever Machine Learning project, as well as Kaggle Competition, that was done for a project in NTU with IISMA friends. We did this project and (would have, comparitively) placed top 30% with EfficientNetV2",
+        description: "My first ever Machine Learning project, as well as Kaggle Competition, that was done for a project in NTU with IISMA friends. We did this project in 2 days and (would have, comparitively) placed top 80% with EfficientNetV2",
         tags: ["Machine Learning"],
         resources: ["Python", "Seaborn","Kaggle"],
-        img: "images/project/wip-img.png",
-        icon: "images/project/wip-icon.png",
+        img: ["images/project/CassavaKaggle.png","images/project/CassavaMain.jpg","images/project/Cassava2.jpg"],
+        icon: "images/project/kaggle.png",
         category: "ml",
         date: "2024",
-        link:'try.com',
-        buttonText: "View on GitHub"
+        buttonText: "View Project Presentation",
+        link:'https://drive.google.com/file/d/1HC1_Fg1a3gI5ujt7ZxjoN0aR4zU3RTNy/view?usp=drive_link'
     },
     {
         title: "Fruity Froggy",
         description: "A 2D Platformer game made with Pygame, featuring multiple enemy, obstacle, and status effect varieties that present as both help and hindrance to Froggy. This was a side project back in 2023 that I did within a week. Available on: https://zurthr.itch.io/fruity-froggy and GitHub",
         tags: ["Game Dev"],
         resources: ["Pygame", "Python", 'Aseprite'],
-        img: ["images/project/ranok base.jpg","images/project/wip-img.png"],
+        img: ["images/project/FroggyMain.png","images/project/FroggyItch.png","images/project/FroggyLost.png","images/project/FroggyBlind.png"],
         icon: "images/project/Bananas.png",
         category: "game",
         date: "2023, somewhen",
@@ -331,8 +328,8 @@ const projects = [
         description: "My first ever 'web dev' project, done in 5 hours, using HTML, CSS (and bootstrap), and mySQL to connect to a database. Stores tasks and their statuses, and simple features such as CRUD for task entries with an additional button to quickly mark tasks as done, and a feature that lets you export your tasks to excel and csv.",
         tags: ["Web Dev"],
         resources: ["MySql", "HTML","CSS","Bootstrap"],
-        img: "images/project/wip-img.png",
-        icon: "images/project/wip-icon.png",
+        img: "images/project/tasklist.png",
+        icon: "images/project/task.png",
         category: "web",
         date: "December 2024"
     },
@@ -349,21 +346,21 @@ const projects = [
     {
         title: "OrbitSMP",
         description: ".",
-        tags: ["AI", "Machine Learning"],
+        tags: ["Game Dev", "Minecraft", "Server Management"],
         resources: ["Python", "TensorFlow"],
         img: "images/project/wip-img.png",
         icon: "images/project/wip-icon.png",
-        category: "ai",
+        category: "game",
         date: "2024"
     },
     {
         title: "ExemplifySMP",
         description: ".",
-        tags: ["AI", "Machine Learning"],
-        resources: ["Python", "TensorFlow"],
+        tags: ["Game Dev", "Web Dev", "Minecraft", "Server Management", "Plugins"],
+        resources: ["Tebex", "HTML&CSS","JS", "Java"],
         img: "images/project/wip-img.png",
         icon: "images/project/wip-icon.png",
-        category: "ai",
+        category: "game",
         date: "2024"
     }
 ];
@@ -405,19 +402,29 @@ function displayProject(index) {
         ? `<a href="${proj.link}" target="_blank" class="project-link-btn">${proj.buttonText || "View Project"}</a>` 
         : ""; 
 
-    const sliderImages = images.map((img, i) => `
-        <img src="${img}" class="slide ${i === 0 ? 'active' : ''}" alt="Project Image ${i+1}">
-    `).join('');
+        let sliderHTML = "";
 
-    const sliderDots = images.length > 1 ? images.map((_, i) => `
-        <span class="dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>
-    `).join('') : "";
+        if (images.length > 1) {
+            const sliderImages = images.map((img, i) => `
+                <img src="${img}" class="slide ${i === 0 ? 'active' : ''}" alt="Project Image ${i+1}">
+            `).join('');
+        
+            const sliderDots = images.map((_, i) => `
+                <span class="dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>
+            `).join('');
+        
+            sliderHTML = `
+                <div class="image-slider">
+                    <div class="slider-container">${sliderImages}</div>
+                    <div class="slider-dots">${sliderDots}</div>
+                </div>
+            `;
+        } else {
+            sliderHTML = `<img src="${images[0]}" class="single-image" alt="Project Image">`;
+        }
 
     projectDetails.innerHTML = `
-        <div class="image-slider">
-            <div class="slider-container">${sliderImages}</div>
-            <div class="slider-dots">${sliderDots}</div>
-        </div>
+        ${sliderHTML}
 
         <div class="project-header">
             <h2 class='project-title ${proj.category}'>${proj.title}</h2>
@@ -454,11 +461,10 @@ function displayProject(index) {
         });
     });
 
-    // Multi img auto slide
     if (images.length > 1) {
         slideInterval = setInterval(() => {
             nextSlide();
-        }, 5000);
+        }, 7000);
     }
 
     document.querySelectorAll(".project-item").forEach(item => item.classList.remove("active"));
@@ -492,7 +498,7 @@ function resetAutoSlide() {
     clearInterval(slideInterval);
     slideInterval = setInterval(() => {
         nextSlide();
-    }, 5000);
+    }, 7000);
 }
 
 window.onload = function() {
