@@ -203,7 +203,8 @@
 .project-description {
     display: flex;
     justify-content: space-between;
-    max-width: 700px;
+    max-width: 755px;
+    width:100%;
     overflow: hidden;
     max-height:100px;
     flex-wrap: nowrap; 
