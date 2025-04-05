@@ -391,13 +391,11 @@ projects.forEach((proj, index) => {
 
 let currentSlideIndex = 0;
 
-let slideInterval; // Store interval globally
+let slideInterval; 
 
 function displayProject(index) {
     const proj = projects[index];
     const images = Array.isArray(proj.img) ? proj.img : [proj.img];
-    
-    // Default behavior: Show nothing if no link exists
     const projectButton = proj.link 
         ? `<a href="${proj.link}" target="_blank" class="project-link-btn">${proj.buttonText || "View Project"}</a>` 
         : ""; 
@@ -474,11 +472,14 @@ function displayProject(index) {
 function showSlide(index) {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
+    const dotbg = document.querySelector('.slider-dots');
     if (!slides.length) return;
 
     slides.forEach(slide => slide.classList.remove('active'));
     dots.forEach(dot => dot.classList.remove('active'));
-
+    dotbg.classList.remove('slider-dots');
+    void dotbg.offsetWidth;
+    dotbg.classList.add('slider-dots');
     slides[index].classList.add('active');
     if (dots[index]) dots[index].classList.add('active');
 
