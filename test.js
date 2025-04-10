@@ -253,7 +253,7 @@ const projects = [
         tags: ["Web Dev",'Front-End', "Portfolio"],
         resources: ["HTML", "CSS", "JS"],
         img: ["images/project/ZurufikarMain.png","images/project/ZurufikarFigma.png","images/project/ZurufikarCode.png"],
-        icon: "images/project/wip-icon.png",
+        icon: "images/project/ico.png",
         category: "web",
         date: "March 2025"
     },
@@ -312,6 +312,17 @@ const projects = [
         date: "2023, somewhen",
         buttonText: "View on GitHub",
         link:'https://github.com/Zurthr/Fruity-Froggy'
+    },
+    {
+        title: "SiJempol - Sistem Jemput Sampah Online",
+        description: "A project done in 3 days during LKMM with friends met during the event. Themed around an application and organization that cleans up waste around the industrial estates of Jakarta.",
+        tags: ["Non-IT", "Organizational"
+        ],
+        resources: ["TALI","Figma","Rencana Kerja"],
+        img: ["images/project/Sijempol (1).png","images/project/Sijempol (2).png","images/project/Sijempol (3).png"],
+        icon: "images/project/SijempolLogo.png",
+        category: "nit",
+        date: "Feb 2025",
     },
     {
         title: "Academify",
@@ -661,42 +672,46 @@ function addTimelineItems(timelineData) {
         addTimelineItems(timelineData);
     });
 
-let scrollInterval;
-let scrollingDown = true;
-
-function loopSmoothScroll() {
-    let timeline = document.querySelector('.timeline');
-    if (!timeline) return;
-
-    function startScrolling() {
-        scrollInterval = setInterval(() => {
-            if (scrollingDown) {
-                // Scroll down
-                if (timeline.scrollTop < timeline.scrollHeight - timeline.clientHeight) {
-                    timeline.scrollTop += 1.8;
+    let scrollInterval;
+    let scrollingDown = true;
+    
+    function loopSmoothScroll() {
+        const timeline = document.querySelector('.timeline');
+        if (!timeline) return;
+    
+        const scrollDownSpeed = 2;
+        const scrollUpSpeed = 2.3;
+    
+        function startScrolling() {
+            scrollInterval = setInterval(() => {
+                const maxScrollTop = timeline.scrollHeight - timeline.clientHeight;
+    
+                if (scrollingDown) {
+                    if (timeline.scrollTop + scrollDownSpeed < maxScrollTop) {
+                        timeline.scrollTop += scrollDownSpeed;
+                    } else {
+                        timeline.scrollTop = maxScrollTop;
+                        scrollingDown = false;
+                    }
                 } else {
-                    scrollingDown = false; 
+                    if (timeline.scrollTop - scrollUpSpeed > 0) {
+                        timeline.scrollTop -= scrollUpSpeed;
+                    } else {
+                        timeline.scrollTop = 0;
+                        scrollingDown = true;
+                    }
                 }
-            } else {
-                // Scroll up
-                if (timeline.scrollTop > 0) {
-                    timeline.scrollTop -= 2;
-                } else {
-                    scrollingDown = true;
-                }
-            }
-        }, 15); 
+            }, 15);
+        }
+    
+        function stopScrolling() {
+            clearInterval(scrollInterval);
+        }
+    
+        startScrolling();
+    
+        timeline.addEventListener("mouseenter", stopScrolling);
+        timeline.addEventListener("mouseleave", startScrolling);
     }
-
-    function stopScrolling() {
-        clearInterval(scrollInterval);
-    }
-
-    startScrolling();
-
-    // hover control
-    timeline.addEventListener("mouseenter", stopScrolling);
-    timeline.addEventListener("mouseleave", startScrolling);
-}
-
-window.onload = loopSmoothScroll;
+    
+    loopSmoothScroll();
