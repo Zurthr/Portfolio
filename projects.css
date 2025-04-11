@@ -294,6 +294,7 @@
 /* Project category colors */
 .project-item.web { border-left-color: #B1368D ; } 
 .project-item.fr { border-left-color: #6141A1 ; }
+.project-item.ui { border-left-color: #7e5cc2 ; }
 .project-item.ml { border-left-color: #58A1CF ; } 
 .project-item.game { border-left-color: #85E0C1 ; }
 .project-item.nit { border-left-color: #E7C174    ; } 
@@ -301,6 +302,7 @@
 
 .web-dev { background-color: #B1368D95 ; } 
 .front-end { background-color: #6141A195  ; } 
+.uiux { background-color: #7e5cc295  ; } 
 .machine-learning { background-color: #58A1CF95 ; }
 .game-dev { background-color: #85E0C195  ; } 
 .non-it { background-color: #E7C17495     ; } 

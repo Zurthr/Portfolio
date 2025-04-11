@@ -316,6 +316,16 @@ const projects = [
         link:'https://github.com/Zurthr/Fruity-Froggy'
     },
     {
+        title: "Academify",
+        description: "My first UI/UX Project and resarch based on Education. Created and designed an educational app that features various amount of gammification to make learning more fun and enjoyable for our younger generations. Prior research was done to students and teachers alike to make sure that this platform is as useful, accurate, and on-point as possible. This project was done in 2 weeks with a team of 3.",
+        tags: ["UIUX", "Front-End"],
+        resources: ["Figma", "Canva"],
+        img: ["images/project/AcademifyMain.png","images/project/Academify1.png","images/project/Academify2.png"],
+        icon: "images/project/AcademifyLogo.png",
+        category: "ui",
+        date: "2023"
+    },
+    {
         title: "SiJempol - Sistem Jemput Sampah Online",
         description: "A project done in 3 days during LKMM with friends met during the event. Themed around an application and organization that cleans up waste around the industrial estates of Jakarta.",
         tags: ["Non-IT", "Organizational"
@@ -345,16 +355,6 @@ const projects = [
         icon: "images/project/OrbitIcon.png",
         category: "game",
         date: "2023"
-    },
-    {
-        title: "Academify",
-        description: ".",
-        tags: ["AI", "Machine Learning"],
-        resources: ["Python", "TensorFlow"],
-        img: "images/project/wip-img.png",
-        icon: "images/project/wip-icon.png",
-        category: "ai",
-        date: "2024"
     },
     {
         title: "Telkomedika Website",
