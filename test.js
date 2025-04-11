@@ -249,13 +249,15 @@ document.addEventListener("DOMContentLoaded", renderSkills);
 const projects = [
     {
         title: "ZURUFIKAR.DEV",
-        description: "My personal portfolio built with HTML, CSS, and JavaScript.",
+        description: "My personal portfolio built with HTML, CSS, and JavaScript. It showcases my projects, skills, and my experiences throughout uni. As of 11/04, it is still not responsive (for mobile) and is still in the works on that end.",
         tags: ["Web Dev",'Front-End', "Portfolio"],
         resources: ["HTML", "CSS", "JS"],
         img: ["images/project/ZurufikarMain.png","images/project/ZurufikarFigma.png","images/project/ZurufikarCode.png"],
         icon: "images/project/ico.png",
         category: "web",
-        date: "March 2025"
+        date: "March 2025",
+        link:'https://github.com/Zurthr/Portfolio',
+        buttonText: "View on GitHub"
     },
     {
         title: "Spellbound - Words of Yore",
@@ -284,7 +286,7 @@ const projects = [
         description: "A side project that I did in my free time. Got an accuracy score of 0.96097 in the Private Leaderboard",
         tags: ["Machine Learning"],
         resources: ["Python", "Catbus","Kaggle"],
-        img: "images/project/wip-img.png",
+        img: "images/project/loanapprove.png",
         icon: "images/project/kaggle.png",
         category: "ml",
         date: "2025",
@@ -325,16 +327,6 @@ const projects = [
         date: "Feb 2025",
     },
     {
-        title: "Academify",
-        description: ".",
-        tags: ["AI", "Machine Learning"],
-        resources: ["Python", "TensorFlow"],
-        img: "images/project/wip-img.png",
-        icon: "images/project/wip-icon.png",
-        category: "ai",
-        date: "2024"
-    },
-    {
         title: "Task List",
         description: "My first ever 'web dev' project, done in 5 hours, using HTML, CSS (and bootstrap), and mySQL to connect to a database. Stores tasks and their statuses, and simple features such as CRUD for task entries with an additional button to quickly mark tasks as done, and a feature that lets you export your tasks to excel and csv.",
         tags: ["Web Dev"],
@@ -343,6 +335,26 @@ const projects = [
         icon: "images/project/task.png",
         category: "web",
         date: "December 2024"
+    },
+    {
+        title: "Orbit Network",
+        description: "WIP",
+        tags: ["Game Dev", "Minecraft", "Server Management"],
+        resources: ["Python", "TensorFlow"],
+        img: "images/project/wip-img.png",
+        icon: "images/project/OrbitIcon.png",
+        category: "game",
+        date: "2023"
+    },
+    {
+        title: "Academify",
+        description: ".",
+        tags: ["AI", "Machine Learning"],
+        resources: ["Python", "TensorFlow"],
+        img: "images/project/wip-img.png",
+        icon: "images/project/wip-icon.png",
+        category: "ai",
+        date: "2024"
     },
     {
         title: "Telkomedika Website",
@@ -355,24 +367,14 @@ const projects = [
         date: ""
     },
     {
-        title: "OrbitSMP",
-        description: ".",
-        tags: ["Game Dev", "Minecraft", "Server Management"],
-        resources: ["Python", "TensorFlow"],
-        img: "images/project/wip-img.png",
-        icon: "images/project/wip-icon.png",
-        category: "game",
-        date: "2024"
-    },
-    {
         title: "ExemplifySMP",
-        description: ".",
+        description: "One of my biggest projects turned business. Cashing out over $3000 USD in the span of 3 years. Lead a team of around 30 staff members that had to moderate and kept updating content for our 900+ server members. As a server owner and main developer, I mainly created server plugins using Java, created the server's Tebex store website, as well as coordinated the work of my staff members.",
         tags: ["Game Dev", "Web Dev", "Minecraft", "Server Management", "Plugins"],
         resources: ["Tebex", "HTML&CSS","JS", "Java"],
-        img: "images/project/wip-img.png",
-        icon: "images/project/wip-icon.png",
+        img: ["images/project/ESMPThumb.png","images/project/ESMPLogos.png"],
+        icon: "images/project/ESMPLogo.png",
         category: "game",
-        date: "2024"
+        date: "Late 2019 - 2022"
     }
 ];
 

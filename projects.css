@@ -10,7 +10,14 @@
 .project-img-head{
     justify-self: center;
     max-width: 100%;
+    transition: 0.3s;
 }
+
+.project-img-head:hover{
+    transform: scale(1.05,1.05);
+    transition: 0.3s;
+}
+
 
 .img.proj{
     display: flex;
@@ -194,7 +201,7 @@
 }
 .text-desc{
     overflow-y: auto; 
-    max-height: 70px;
+    max-height: 80px;
     scrollbar-width: thin;
     scrollbar-color: #242424 #242424;
     direction: rtl; 
@@ -206,7 +213,8 @@
     max-width: 755px;
     width:100%;
     overflow: hidden;
-    max-height:100px;
+    overflow-y: hidden;
+    max-height:140px;
     flex-wrap: nowrap; 
 }
 
