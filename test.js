@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 `
             }}).then((result) => {
                 if (result.isConfirmed) {
-                    window.open('/path/to/resume.pdf', '_blank');
+                    window.open('https://drive.google.com/file/d/1NytpRfrtizqrKw5bj2giXRipPH0XOY_g/view?usp=sharing', '_blank');
                 } else if (result.isDenied) {
-                    window.open('/path/to/resume download.pdf', '_blank');
+                    window.open('https://drive.google.com/uc?export=download&id=1NytpRfrtizqrKw5bj2giXRipPH0XOY_g', '_blank');
                 }
             });
         }
@@ -346,26 +346,26 @@ const projects = [
         category: "web",
         date: "December 2024"
     },
-    {
-        title: "Orbit Network",
-        description: "WIP",
-        tags: ["Game Dev", "Minecraft", "Server Management"],
-        resources: ["Python", "TensorFlow"],
-        img: "images/project/wip-img.png",
-        icon: "images/project/OrbitIcon.png",
-        category: "game",
-        date: "2023"
-    },
-    {
-        title: "Telkomedika Website",
-        description: ".",
-        tags: ["AI", "Machine Learning"],
-        resources: ["Python", "TensorFlow"],
-        img: "images/project/wip-img.png",
-        icon: "images/project/wip-icon.png",
-        category: "ai",
-        date: ""
-    },
+    // {
+    //     title: "Orbit Network",
+    //     description: "WIP",
+    //     tags: ["Game Dev", "Minecraft", "Server Management"],
+    //     resources: ["Python", "TensorFlow"],
+    //     img: "images/project/wip-img.png",
+    //     icon: "images/project/OrbitIcon.png",
+    //     category: "game",
+    //     date: "2023"
+    // },
+    // {
+    //     title: "Telkomedika Website",
+    //     description: ".",
+    //     tags: ["AI", "Machine Learning"],
+    //     resources: ["Python", "TensorFlow"],
+    //     img: "images/project/wip-img.png",
+    //     icon: "images/project/wip-icon.png",
+    //     category: "ai",
+    //     date: ""
+    // },
     {
         title: "ExemplifySMP",
         description: "One of my biggest projects turned business. Cashing out over $3000 USD in the span of 3 years. Lead a team of around 30 staff members that had to moderate and kept updating content for our 900+ server members. As a server owner and main developer, I mainly created server plugins using Java, created the server's Tebex store website, as well as coordinated the work of my staff members.",
@@ -681,8 +681,8 @@ function addTimelineItems(timelineData) {
         const timeline = document.querySelector('.timeline');
         if (!timeline) return;
     
-        const scrollDownSpeed = 2;
-        const scrollUpSpeed = 2.3;
+        const scrollDownSpeed = 2.1;
+        const scrollUpSpeed = 2.4;
     
         function startScrolling() {
             scrollInterval = setInterval(() => {
@@ -716,4 +716,4 @@ function addTimelineItems(timelineData) {
         timeline.addEventListener("mouseleave", startScrolling);
     }
     
-    loopSmoothScroll();
+    document.addEventListener("DOMContentLoaded", loopSmoothScroll);
