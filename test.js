@@ -202,7 +202,7 @@ const skills = {
         { name: "C#", level: "somewhat" },
         { name: "JAVA", level: "familiar" }, { name: "php", level: "somewhat" }, { name: "mySQL", level: "somewhat" },
         { name: "ReactJS", level: "somewhat" }, { name: "Vue", level: "learning" }, { name: "TailwindCSS", level: "somewhat" }, { name: "Lua", level: "somewhat" },
-        { name: "Figma", level: "familiar" }, { name: "phpMyAdmin", level: "familiar" },
+        { name: "Figma", level: "familiar" }, { name: "phpMyAdmin", level: "familiar" }, { name: "Pentaho", level: "familiar" }, { name: "Laravel", level: "familiar" }, { name: "Pentaho", level: "familiar" }, { name: "Selenium", level: "somewhat" },
         { name: "Godot", level: "learning" },
         { name: "PYGAME", level: "somewhat" },
         { name: "SAP", level: "somewhat" },
